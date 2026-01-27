@@ -69,7 +69,7 @@ export function Home() {
                 </div>
 
                 <footer className="footer">
-                    <p>© 2024 GovDocs Assist. Not affiliated with the Government of India.</p>
+                    <p>© 2024 BharatApply. Not affiliated with the Government of India.</p>
                 </footer>
             </div>
 

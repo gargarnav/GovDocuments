@@ -13,7 +13,7 @@ export function Header() {
                         <FileText className="logo-icon" size={24} />
                     </div>
                     <Link to="/" className="brand-text">
-                        <h1>GovDocs Assist</h1>
+                        <h1>BharatApply</h1>
                         <span className="subtitle">Official Document Guide</span>
                     </Link>
                 </div>

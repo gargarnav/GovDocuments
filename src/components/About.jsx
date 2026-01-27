@@ -4,14 +4,17 @@ export function About() {
         <div className="about-container">
             <div className="about-content">
                 {/* EDIT SECTION 1: HEADER */}
-                <h1>About GovDocs Assist</h1>
+                <h1>About BharatApply</h1>
 
                 {/* EDIT SECTION 2: INTRODUCTION */}
                 <section className="about-section">
                     <h2>Our Mission</h2>
                     <p>
-                        GovDocs Assist was created to simplify the often confusing process of gathering requirements for essential government services.
-                        We believe that every citizen deserves clear, accessible, and accurate information about their rights and documentation needs.
+                        At BharatApply, our mission is to make Indian government documentation simple, clear, and accessible for everyone.
+
+                        Many citizens face unnecessary delays and rejections due to unclear document requirements, changing guidelines,
+                        and strict file upload rules. We aim to reduce this confusion by providing accurate, structured information in one place—so users can prepare the correct documents and
+                        complete applications confidently.
                     </p>
                 </section>
 
@@ -19,10 +22,16 @@ export function About() {
                 <section className="about-section">
                     <h2>What We Do</h2>
                     <p>
-                        We provide a centralized, easy-to-use platform where you can find document checklists,
-                        file specification guides, and procedural overviews for services ranging from Passports and Aadhaar cards
-                        to Driving Licenses and Tax filings.
+                        We provide a citizen-friendly documentation guide for common Indian government services, including passport, Aadhaar, PAN, voter ID, driving license, certificates, and more.
+                        On BharatApply, you can find:
                     </p>
+                    <ul className="about-list">
+                        <li>Document checklists for each service</li>
+                        <li>Upload requirements, including file format and size limits</li>
+                        <li>Photo & signature guidelines, where applicable</li>
+                        <li>Step-by-step guidance for online applications (Future Plan)</li>
+                        <li>Practical tips to help avoid errors, rejections, and delays</li>
+                    </ul>
                 </section>
 
                 {/* EDIT SECTION 4: DISCLAIMER */}
@@ -34,6 +43,9 @@ export function About() {
                     </p>
                 </section>
             </div>
-        </div>
+            <footer className="footer" style={{ marginTop: 'auto' }}>
+                <p>© 2024 BharatApply. Not affiliated with the Government of India.</p>
+            </footer>
+        </div >
     );
 }
