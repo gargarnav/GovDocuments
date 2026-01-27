@@ -1,6 +1,6 @@
 import { Search } from 'lucide-react';
 
-export function Hero() {
+export function Hero({ searchTerm, onSearchChange }) {
     return (
         <section className="hero">
             <div className="hero-content">
@@ -13,6 +13,8 @@ export function Hero() {
                         type="text"
                         placeholder="What document are you looking for? (e.g. Passport, PAN)"
                         className="search-input"
+                        value={searchTerm}
+                        onChange={(e) => onSearchChange(e.target.value)}
                     />
                 </div>
             </div>

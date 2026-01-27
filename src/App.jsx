@@ -50,7 +50,7 @@ function App() {
         />
 
         <div className="content-wrapper">
-          <Hero />
+          <Hero searchTerm={searchTerm} onSearchChange={setSearchTerm} />
 
           <div className="content-container">
             <section className="services-section">
