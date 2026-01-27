@@ -76,12 +76,12 @@ function App() {
               </div>
             </section>
           </div>
+
+          <footer className="footer">
+            <p>© 2024 GovDocs Assist. Not affiliated with the Government of India.</p>
+          </footer>
         </div>
       </main>
-
-      <footer className="footer">
-        <p>© 2024 GovDocs Assist. Not affiliated with the Government of India.</p>
-      </footer>
 
       <DocumentModal
         service={selectedService}

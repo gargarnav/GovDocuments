@@ -6,7 +6,7 @@ export function DocumentModal({ service, onClose }) {
         // Prevent scrolling when modal is open
         document.body.style.overflow = 'hidden';
         return () => {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = '';
         };
     }, []);
 
