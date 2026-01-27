@@ -1,0 +1,38 @@
+/* Layout Styles */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    width: 100%;
+    flex: 1;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section-header h3 {
+    font-size: 1.75rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: var(--color-text-muted);
+}
+
+.footer {
+    background-color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.875rem;
+    margin-top: auto;
+}
