@@ -1,15 +1,18 @@
-import { Book, CreditCard, UserCheck, Truck, FileText } from 'lucide-react';
+
+import {
+    Book, CreditCard, UserCheck, Truck, FileText,
+    Landmark, GraduationCap, FileBadge, ShieldCheck,
+    HeartPulse, Plane, HelpCircle
+} from 'lucide-react';
 
 const icons = {
-    Book,
-    CreditCard,
-    UserCheck,
-    Truck,
-    FileText
+    Book, CreditCard, UserCheck, Truck, FileText,
+    Landmark, GraduationCap, FileBadge, ShieldCheck,
+    HeartPulse, Plane
 };
 
 export function ServiceCard({ service, onClick }) {
-    const Icon = icons[service.iconName] || FileText;
+    const Icon = icons[service.iconName] || HelpCircle;
 
     return (
         <div className="service-card" onClick={() => onClick(service)}>
