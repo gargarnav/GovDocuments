@@ -1,24 +1,27 @@
+
 import { FileText } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 export function Header() {
+    const location = useLocation();
+
     return (
         <header className="header">
             <div className="header-content">
                 <div className="logo-section">
                     <div className="emblem-placeholder">
-                        {/* Abstract representation of a seal or logo */}
                         <FileText className="logo-icon" size={24} />
                     </div>
-                    <div className="brand-text">
+                    <Link to="/" className="brand-text">
                         <h1>GovDocs Assist</h1>
                         <span className="subtitle">Official Document Guide</span>
-                    </div>
+                    </Link>
                 </div>
 
                 <nav className="nav-links">
-                    <a href="#" className="nav-link active">Home</a>
-                    <a href="#" className="nav-link">Services</a>
-                    <a href="#" className="nav-link">About</a>
+                    <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+                    <Link to="/" className="nav-link">Services</Link>
+                    <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link>
                 </nav>
             </div>
 

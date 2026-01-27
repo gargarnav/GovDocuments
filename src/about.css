@@ -1,0 +1,44 @@
+.about-container {
+    padding: 3rem 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.about-content h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about-section {
+    margin-bottom: 2.5rem;
+    background: var(--color-surface);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.about-section h2 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    color: var(--color-text-main);
+    line-height: 1.7;
+}
+
+.about-section.disclaimer {
+    background-color: #fff8f0;
+    /* Light orange warning tint */
+    border-color: #ffe0b2;
+}
+
+.about-section.disclaimer h3 {
+    color: var(--color-secondary);
+    /* Saffron */
+    margin-bottom: 0.5rem;
+}
