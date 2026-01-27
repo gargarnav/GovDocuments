@@ -49,6 +49,167 @@ body,
     /* Independent scroll */
     padding: 1.5rem 0;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ad Container Styles */
+.ad-container {
+    background-color: #f1f3f5;
+    border: 1px dashed #ced4da;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    font-size: 0.85rem;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.ad-label {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.ad-sidebar-bottom {
+    margin: 1rem 1rem 0;
+    height: 250px;
+    min-height: 250px;
+    margin-top: auto;
+    /* Push to bottom */
+}
+
+.ad-banner {
+    margin: 2rem 0;
+    height: 100px;
+    width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+        position: relative;
+    }
+
+    /* Sidebar as Mobile Drawer */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 80%;
+        /* Takes up most of the screen */
+        max-width: 300px;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        padding-top: 1rem;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* Overlay for Sidebar */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+    }
+
+    .sidebar-overlay.visible {
+        display: block;
+    }
+
+    .content-wrapper {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* Mobile Header Adjustments */
+    .header-content {
+        padding: 0 1rem;
+    }
+
+    .brand-text h1 {
+        font-size: 1.25rem;
+    }
+
+    .brand-text .subtitle {
+        font-size: 0.7rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    /* Service Grid Mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+        /* Force single column */
+    }
+
+    /* Ad Container Mobile */
+    .ad-banner {
+        height: auto;
+        min-height: 50px;
+        padding: 1rem;
+    }
+
+    /* Mobile Filter Bar */
+    .mobile-category-bar {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 1rem;
+        background: #fff;
+        border-bottom: 1px solid var(--color-border);
+        margin: -1rem -1rem 1rem -1rem;
+        /* Negative margin to span full width */
+        position: sticky;
+        top: 0;
+        z-index: 90;
+    }
+
+    .mobile-filter-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius-md);
+        font-weight: 500;
+        color: var(--color-text-main);
+        font-size: 0.9rem;
+    }
+
+    .current-category-label {
+        font-weight: 600;
+        color: var(--color-primary);
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* Hide mobile bar on desktop */
+.mobile-category-bar {
+    display: none;
 }
 
 .content-wrapper {
@@ -152,51 +313,4 @@ body,
 .theme-private .nav-item.active {
     background-color: rgba(21, 71, 52, 0.1);
     /* Green tint */
-}
-
-/* Responsive sidebar */
-@media (max-width: 768px) {
-    .main-layout {
-        flex-direction: column;
-        overflow-y: auto;
-        /* Allow window scroll on mobile if needed, or stick to fixed */
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--color-border);
-        padding: 1rem;
-        overflow-y: visible;
-        overflow-x: auto;
-        flex-shrink: 0;
-    }
-
-    .sidebar-header {
-        display: none;
-    }
-
-    .sidebar-nav {
-        flex-direction: row;
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
-    }
-
-    .nav-item {
-        width: auto;
-        white-space: nowrap;
-        padding: 0.5rem 1rem;
-        border: 1px solid var(--color-border);
-    }
-
-    .content-wrapper {
-        overflow-y: visible;
-        /* Let main-layout handle scroll on mobile */
-        height: auto;
-    }
-
-    .content-container {
-        padding: 1.5rem;
-    }
 }

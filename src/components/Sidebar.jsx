@@ -5,6 +5,8 @@ import {
     LayoutGrid
 } from 'lucide-react';
 
+import { AdContainer } from './AdContainer';
+
 const icons = {
     UserCheck, Truck, Landmark, GraduationCap,
     FileBadge, ShieldCheck, HeartPulse, Plane
@@ -39,6 +41,9 @@ export function Sidebar({ categories, selectedCategory, onSelectCategory }) {
                     );
                 })}
             </nav>
+
+            {/* Minimal Ad Placeholder */}
+            <AdContainer format="sidebar-bottom" />
         </aside>
     );
 }

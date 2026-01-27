@@ -5,13 +5,18 @@ import { Sidebar } from './components/Sidebar';
 import { ServiceCard } from './components/ServiceCard';
 import { DocumentModal } from './components/DocumentModal';
 import { services, categories } from './data/services';
+import { AdContainer } from './components/AdContainer';
+
+import { Menu } from 'lucide-react'; // Import Menu icon
 
 export function Home() {
     const [selectedService, setSelectedService] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Mobile sidebar state
 
     const filteredServices = services.filter(service => {
+        // ... (existing filter logic)
         // 1. Filter by Category
         if (selectedCategory && service.categoryId !== selectedCategory) return false;
 
@@ -38,10 +43,27 @@ export function Home() {
                     setSelectedCategory(id);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
+                isOpen={isSidebarOpen}
+                onClose={() => setIsSidebarOpen(false)}
             />
 
             <div className="content-wrapper">
+                {/* Mobile Category Toggle */}
+                <div className="mobile-category-bar">
+                    <button
+                        className="mobile-filter-btn"
+                        onClick={() => setIsSidebarOpen(true)}
+                    >
+                        <Menu size={18} />
+                        <span>Categories</span>
+                    </button>
+                    <span className="current-category-label">
+                        {activeCategory ? activeCategory.title : 'All Services'}
+                    </span>
+                </div>
                 <Hero searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+
+
 
                 <div className="content-container">
                     <section className="services-section">
@@ -65,6 +87,8 @@ export function Home() {
                                 </div>
                             )}
                         </div>
+
+                        <AdContainer format="banner" />
                     </section>
                 </div>
 
