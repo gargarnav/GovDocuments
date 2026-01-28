@@ -1,6 +1,6 @@
-
-import { FileText } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { ThemeToggle } from './ThemeToggle';
+import { Logo } from './Logo';
 
 export function Header() {
     const location = useLocation();
@@ -10,7 +10,7 @@ export function Header() {
             <div className="header-content">
                 <div className="logo-section">
                     <div className="emblem-placeholder">
-                        <FileText className="logo-icon" size={24} />
+                        <Logo className="logo-icon" size={24} />
                     </div>
                     <Link to="/" className="brand-text">
                         <h1>BharatApply</h1>
@@ -18,10 +18,11 @@ export function Header() {
                     </Link>
                 </div>
 
-                <nav className="nav-links">
+                <nav className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
                     <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
                     <Link to="/" className="nav-link">Services</Link>
                     <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link>
+                    <ThemeToggle />
                 </nav>
             </div>
 

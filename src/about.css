@@ -51,6 +51,12 @@
     border-color: #ffe0b2;
 }
 
+[data-theme='dark'] .about-section.disclaimer {
+    background-color: rgba(255, 183, 77, 0.1);
+    /* Dark mode warning tint */
+    border-color: rgba(255, 183, 77, 0.3);
+}
+
 .about-section.disclaimer h3 {
     color: var(--color-secondary);
     /* Saffron */
