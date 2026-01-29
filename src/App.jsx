@@ -14,7 +14,6 @@ const Home = lazy(() => import('./Home').then(module => ({ default: module.Home 
 const About = lazy(() => import('./components/About').then(module => ({ default: module.About })));
 const GuidesIndex = lazy(() => import('./components/GuidesIndex'));
 const GuidePage = lazy(() => import('./components/GuidePage'));
-import { DelayedAd } from './components/DelayedAd';
 
 const Loading = () => (
   <div style={{
