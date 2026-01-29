@@ -1,23 +1,42 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
 import './App.css';
 import './modal.css';
 import './layout.css';
 import './about.css';
 import { Header } from './components/Header';
-import { Home } from './Home';
-import { About } from './components/About';
+import { Analytics } from './components/Analytics';
+
+// Lazy loading components for performance
+const Home = lazy(() => import('./Home').then(module => ({ default: module.Home })));
+const About = lazy(() => import('./components/About').then(module => ({ default: module.About })));
+
+const Loading = () => (
+  <div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '50vh',
+    color: '#64748b'
+  }}>
+    Loading...
+  </div>
+);
 
 function App() {
   return (
     <Router>
+      <Analytics />
       <div className="app-container">
         <Header />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Suspense>
 
 
       </div>
