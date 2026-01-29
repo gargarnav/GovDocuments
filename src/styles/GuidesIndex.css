@@ -3,8 +3,9 @@
 .guides-index {
   min-height: 100vh;
   padding: 2rem 1rem;
-  background: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  overflow-y: auto;
 }
 
 .guides-container {
@@ -23,13 +24,13 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--primary-color);
+  color: var(--color-primary);
   line-height: 1.2;
 }
 
 .guides-subtitle {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: var(--color-text-muted);
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -47,20 +48,20 @@
   position: relative;
   display: flex;
   align-items: center;
-  background: var(--card-bg);
-  border: 2px solid var(--border-color);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
   border-radius: 8px;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
 }
 
 .search-wrapper:focus-within {
-  border-color: var(--primary-color);
+  border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
 }
 
 .search-icon {
-  color: var(--text-secondary);
+  color: var(--color-text-muted);
   margin-right: 0.75rem;
   flex-shrink: 0;
 }
@@ -72,11 +73,11 @@
   font-size: 1rem;
   padding: 0.5rem 0;
   outline: none;
-  color: var(--text-color);
+  color: var(--color-text-main);
 }
 
 .search-input::placeholder {
-  color: var(--text-secondary);
+  color: var(--color-text-muted);
 }
 
 /* Category Filter */
@@ -88,9 +89,9 @@
 
 .filter-btn {
   padding: 0.5rem 1rem;
-  border: 2px solid var(--border-color);
-  background: var(--card-bg);
-  color: var(--text-color);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-main);
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -99,27 +100,27 @@
 }
 
 .filter-btn:hover {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .filter-btn.active {
-  background: var(--primary-color);
+  background: var(--color-primary);
   color: white;
-  border-color: var(--primary-color);
+  border-color: var(--color-primary);
 }
 
 /* Results Info */
 .results-info {
   padding: 1rem;
-  background: var(--card-bg);
+  background: var(--color-surface);
   border-radius: 8px;
   font-size: 0.95rem;
   margin-bottom: 2rem;
 }
 
 .results-info strong {
-  color: var(--primary-color);
+  color: var(--color-primary);
   font-weight: 600;
 }
 
@@ -132,8 +133,8 @@
 }
 
 .guide-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
@@ -145,7 +146,7 @@
 }
 
 .guide-card:hover {
-  border-color: var(--primary-color);
+  border-color: var(--color-primary);
   box-shadow: 0 8px 24px rgba(0, 51, 102, 0.15);
   transform: translateY(-2px);
 }
@@ -157,7 +158,7 @@
 .category-label {
   display: inline-block;
   padding: 0.4rem 0.8rem;
-  background: var(--primary-color);
+  background: var(--color-primary);
   color: white;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -169,7 +170,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: var(--primary-color);
+  color: var(--color-primary);
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -179,7 +180,7 @@
 
 .guide-card-description {
   font-size: 0.95rem;
-  color: var(--text-secondary);
+  color: var(--color-text-muted);
   margin-bottom: 1rem;
   flex-grow: 1;
   display: -webkit-box;
@@ -194,7 +195,7 @@
   gap: 1rem;
   margin-bottom: 1rem;
   font-size: 0.85rem;
-  color: var(--text-secondary);
+  color: var(--color-text-muted);
 }
 
 .guide-docs-count,
