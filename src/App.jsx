@@ -6,7 +6,8 @@ import './modal.css';
 import './layout.css';
 import './about.css';
 import { Header } from './components/Header';
-import { Analytics } from './components/Analytics';
+import { Analytics as MarketingAnalytics } from './components/Analytics';
+import { Analytics } from '@vercel/analytics/react';
 import { AdLoader } from './components/AdLoader';
 
 // Lazy loading components for performance
@@ -30,6 +31,7 @@ const Loading = () => (
 function App() {
   return (
     <Router>
+      <MarketingAnalytics />
       <Analytics />
       <AdLoader />
       <div className="app-container">
