@@ -32,6 +32,23 @@
 </head>
 
 <body>
+  <!-- H1 tag visible in raw HTML for SEO crawlers -->
+  <!-- This ensures crawlers see H1 even if they don't execute JavaScript -->
+  <!-- React will render its own H1 in Hero component, this one gets hidden via CSS -->
+  <h1 id="seo-initial-h1">Government Document Requirements in India – BharatApply</h1>
+  <noscript>
+    <style>#seo-initial-h1 { display: block !important; }</style>
+  </noscript>
+  <style>
+    /* Hide initial H1 once React has rendered (to avoid duplicate H1s) */
+    #seo-initial-h1 { 
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  </style>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>

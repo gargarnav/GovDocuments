@@ -8,6 +8,7 @@ export function About() {
                 title="About BharatApply"
                 description="Learn about BharatApply's mission to simplify Indian government documentation. We provide clear checklists and file requirements for confident applications."
                 canonicalUrl="https://bharatapply.online/about"
+                h1Text="About BharatApply - Government Document Guide"
                 schema={{
                     "@context": "https://schema.org",
                     "@type": "Organization",
@@ -78,24 +79,40 @@ export function About() {
                 <section className="about-section">
                     <h2>How BharatApply Helps You</h2>
                     <p>
-                        Our platform is designed to save you time and reduce the frustration often associated with government document applications. 
-                        Instead of searching through multiple government websites and trying to decipher complex guidelines, BharatApply provides 
+                        Our platform is designed to save you time and reduce the frustration often associated with government document applications.
+                        Instead of searching through multiple government websites and trying to decipher complex guidelines, BharatApply provides
                         everything you need in one place. We've compiled information from official sources and organized it in an easy-to-understand format.
                     </p>
                     <p>
-                        Each service guide includes a complete checklist of required documents, specific file format requirements, size limitations, 
-                        and step-by-step instructions where applicable. We also provide tips based on common issues faced by applicants, helping you 
-                        avoid mistakes that could delay your application. Our goal is to make the process as smooth as possible so you can complete 
+                        Each service guide includes a complete checklist of required documents, specific file format requirements, size limitations,
+                        and step-by-step instructions where applicable. We also provide tips based on common issues faced by applicants, helping you
+                        avoid mistakes that could delay your application. Our goal is to make the process as smooth as possible so you can complete
                         your applications with confidence.
                     </p>
                     <p>
-                        Whether you're applying for your first Aadhaar card, renewing your passport, updating your PAN details, or applying for 
-                        any other government document, BharatApply is here to guide you through the process. We regularly update our information to 
+                        Whether you're applying for your first Aadhaar card, renewing your passport, updating your PAN details, or applying for
+                        any other government document, BharatApply is here to guide you through the process. We regularly update our information to
                         reflect the latest guidelines and requirements from official government portals.
                     </p>
                 </section>
 
-                {/* EDIT SECTION 6: DISCLAIMER */}
+                {/* EDIT SECTION 6: DATA PRIVACY */}
+                <section className="about-section">
+                    <h2>Your Privacy & Data Safety</h2>
+                    <p>
+                        We understand that applying for government documents involves handling sensitive personal information.
+                        <strong>BharatApply is purely an informational guide</strong>. We do not collect, store, or process your personal data, biometric details,
+                        or financial information. Our platform serves as a bridge of knowledge, directing you to the official, secured government portals for all
+                        data submission and processing.
+                    </p>
+                    <p>
+                        We strictly advise users never to share OTPs, passwords, or sensitive details with anyone claiming to represent our site.
+                        Always check the URL in your browser address bar to ensure you are on an official government website (ending in .gov.in or .nic.in)
+                        before entering any personal details. Our checklists are designed to help you prepare your offline documents safely before you even go online.
+                    </p>
+                </section>
+
+                {/* EDIT SECTION 7: DISCLAIMER */}
                 <section className="about-section disclaimer">
                     <h3>Disclaimer</h3>
                     <p>

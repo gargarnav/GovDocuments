@@ -4,6 +4,7 @@ import {
     FileBadge, ShieldCheck, HeartPulse, Plane,
     LayoutGrid
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import { AdContainer } from './AdContainer';
 
@@ -19,25 +20,33 @@ export function Sidebar({ categories, selectedCategory, onSelectCategory }) {
                 <h3>Categories</h3>
             </div>
             <nav className="sidebar-nav">
-                <button
+                <Link
+                    to="/"
                     className={`nav-item ${!selectedCategory ? 'active' : ''}`}
-                    onClick={() => onSelectCategory(null)}
+                    onClick={() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        if (window.innerWidth < 768) onSelectCategory(null); // Close sidebar on mobile
+                    }}
                 >
                     <LayoutGrid size={20} />
                     <span>All Services</span>
-                </button>
+                </Link>
 
                 {categories.map(cat => {
                     const Icon = icons[cat.iconName] || LayoutGrid;
                     return (
-                        <button
+                        <Link
                             key={cat.id}
+                            to={`/?category=${cat.id}`}
                             className={`nav-item ${cat.id === selectedCategory ? 'active' : ''} ${cat.isPrivate ? 'private-item' : ''}`}
-                            onClick={() => onSelectCategory(cat.id)}
+                            onClick={() => {
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                if (window.innerWidth < 768) onSelectCategory(cat.id); // Close sidebar on mobile
+                            }}
                         >
                             <Icon size={20} />
                             <span>{cat.title}</span>
-                        </button>
+                        </Link>
                     );
                 })}
             </nav>

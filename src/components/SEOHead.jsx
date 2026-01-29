@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 
-export function SEOHead({ title, description, canonicalUrl, ogImage, type = 'website', schema }) {
+export function SEOHead({ title, description, canonicalUrl, ogImage, type = 'website', schema, h1Text }) {
     const location = useLocation();
     const siteTitle = 'BharatApply';
     const baseUrl = 'https://bharatapply.online';
     const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-    
+
     // Generate canonical URL: use provided canonicalUrl, or generate from location
     // Always use clean URL without query parameters to avoid duplicate content
     let fullUrl;
@@ -15,7 +15,9 @@ export function SEOHead({ title, description, canonicalUrl, ogImage, type = 'web
     } else {
         // Remove query parameters and hash from pathname for canonical URL
         const cleanPath = location.pathname === '/' ? '' : location.pathname;
-        fullUrl = `${baseUrl}${cleanPath}`;
+        // Ensure we use the current origin dynamically or fall back to the hardcoded one
+        const origin = typeof window !== 'undefined' ? window.location.origin : baseUrl;
+        fullUrl = `${origin}${cleanPath}`;
     }
 
     return (
@@ -24,6 +26,17 @@ export function SEOHead({ title, description, canonicalUrl, ogImage, type = 'web
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
             <link rel="canonical" href={fullUrl} />
+
+            {/* H1 tag for SEO - added to body via react-helmet */}
+            {h1Text && (
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "WebPage",
+                        "headline": h1Text
+                    })}
+                </script>
+            )}
 
             {/* Open Graph */}
             <meta property="og:title" content={fullTitle} />

@@ -22,14 +22,24 @@ export function Home() {
     useEffect(() => {
         const serviceId = searchParams.get('service');
         const search = searchParams.get('search');
-        
+        const category = searchParams.get('category');
+
         if (serviceId) {
             const service = services.find(s => s.id === serviceId);
             if (service) {
                 setSelectedService(service);
             }
+        } else {
+            // Close modal if no service param
+            setSelectedService(null);
         }
-        
+
+        if (category) {
+            setSelectedCategory(category);
+        } else {
+            setSelectedCategory(null);
+        }
+
         if (search) {
             setSearchTerm(search);
         }
@@ -60,6 +70,7 @@ export function Home() {
                 title="Indian Government Documents Guide"
                 description="BharatApply: Your trusted guide for government documents in India. Easily find, apply, and track Aadhar, PAN, Passport, Driving License, and more."
                 canonicalUrl="https://bharatapply.online"
+                h1Text="Government Document Requirements in India – BharatApply"
                 schema={{
                     "@context": "https://schema.org",
                     "@type": "WebSite",
@@ -105,12 +116,12 @@ export function Home() {
                     <section className="popular-services" style={{ padding: '0 0 2rem 0' }}>
                         <h2>Popular Government Services</h2>
                         <div className="quick-links" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '1rem' }}>
-                            <Link to="/?search=Aadhaar" onClick={(e) => { e.preventDefault(); setSearchTerm('Aadhaar'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Aadhaar Card</Link>
-                            <Link to="/?search=PAN" onClick={(e) => { e.preventDefault(); setSearchTerm('PAN'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">PAN Card</Link>
-                            <Link to="/?search=Passport" onClick={(e) => { e.preventDefault(); setSearchTerm('Passport'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Passport</Link>
-                            <Link to="/?search=Driving" onClick={(e) => { e.preventDefault(); setSearchTerm('Driving'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Driving License</Link>
-                            <Link to="/?search=Birth" onClick={(e) => { e.preventDefault(); setSearchTerm('Birth'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Birth Certificate</Link>
-                            <Link to="/?search=Income" onClick={(e) => { e.preventDefault(); setSearchTerm('Income'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Income Certificate</Link>
+                            <Link to="/?search=Aadhaar" onClick={() => { setSearchTerm('Aadhaar'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Aadhaar Card</Link>
+                            <Link to="/?search=PAN" onClick={() => { setSearchTerm('PAN'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">PAN Card</Link>
+                            <Link to="/?search=Passport" onClick={() => { setSearchTerm('Passport'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Passport</Link>
+                            <Link to="/?search=Driving" onClick={() => { setSearchTerm('Driving'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Driving License</Link>
+                            <Link to="/?search=Birth" onClick={() => { setSearchTerm('Birth'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Birth Certificate</Link>
+                            <Link to="/?search=Income" onClick={() => { setSearchTerm('Income'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Income Certificate</Link>
                         </div>
                     </section>
                 </div>
@@ -142,28 +153,28 @@ export function Home() {
                 </div>
 
                 {/* Rich Semantic Content for SEO */}
-                <SEOContent setSearchTerm={setSearchTerm} />
+                <SEOContent />
 
                 {/* Additional Content Section for SEO */}
                 <section className="additional-content-section" style={{ padding: '2rem', background: '#fff', marginTop: '2rem' }}>
                     <div className="content-container">
                         <h2>Complete Guide to Government Document Applications</h2>
                         <p style={{ marginBottom: '1.5rem', lineHeight: '1.7' }}>
-                            Applying for government documents in India requires careful preparation and understanding of the specific requirements for each service. 
-                            Whether you're a first-time applicant or need to update existing documents, having the correct paperwork ready can save you time and prevent 
-                            application rejections. Our comprehensive guides cover all major government services including identity documents, travel documents, 
+                            Applying for government documents in India requires careful preparation and understanding of the specific requirements for each service.
+                            Whether you're a first-time applicant or need to update existing documents, having the correct paperwork ready can save you time and prevent
+                            application rejections. Our comprehensive guides cover all major government services including identity documents, travel documents,
                             certificates, and more.
                         </p>
                         <p style={{ marginBottom: '1.5rem', lineHeight: '1.7' }}>
-                            Each government portal has specific file format and size requirements that must be strictly followed. For example, passport applications 
-                            require JPEG images under 200KB, while PAN card applications need photos sized at 3.5x2.5cm. Understanding these specifications before 
-                            uploading can prevent common errors that lead to application delays. Our detailed checklists ensure you have everything ready before 
+                            Each government portal has specific file format and size requirements that must be strictly followed. For example, passport applications
+                            require JPEG images under 200KB, while PAN card applications need photos sized at 3.5x2.5cm. Understanding these specifications before
+                            uploading can prevent common errors that lead to application delays. Our detailed checklists ensure you have everything ready before
                             starting your online application.
                         </p>
                         <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Common Application Mistakes to Avoid</h3>
                         <p style={{ marginBottom: '1.5rem', lineHeight: '1.7' }}>
-                            Many applications are rejected due to simple mistakes that can be easily avoided. Common issues include mismatched names across documents, 
-                            incorrect file formats, oversized images, and missing self-attestation. Our guides highlight these common pitfalls and provide solutions to 
+                            Many applications are rejected due to simple mistakes that can be easily avoided. Common issues include mismatched names across documents,
+                            incorrect file formats, oversized images, and missing self-attestation. Our guides highlight these common pitfalls and provide solutions to
                             ensure your application is processed smoothly. Always verify that your name, date of birth, and address match exactly across all submitted documents.
                         </p>
                     </div>
@@ -228,7 +239,15 @@ export function Home() {
 
             <DocumentModal
                 service={selectedService}
-                onClose={() => setSelectedService(null)}
+                onClose={() => {
+                    setSelectedService(null);
+                    // Remove service param from URL
+                    setSearchParams(prev => {
+                        const newParams = new URLSearchParams(prev);
+                        newParams.delete('service');
+                        return newParams;
+                    });
+                }}
             />
         </div>
     );

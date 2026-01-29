@@ -17,15 +17,15 @@ export function ServiceCard({ service, onClick }) {
     // Create SEO-friendly URL with service ID for crawlers
     const serviceUrl = `/?service=${service.id}`;
 
-    const handleClick = (e) => {
-        e.preventDefault();
-        onClick(service);
+    const handleClick = () => {
+        // Allow navigation to happen so URL updates
+        if (onClick) onClick(service);
     };
 
     return (
-        <Link 
-            to={serviceUrl} 
-            className="service-card" 
+        <Link
+            to={serviceUrl}
+            className="service-card"
             onClick={handleClick}
             aria-label={`View details for ${service.title}`}
         >
