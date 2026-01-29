@@ -394,6 +394,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -404,35 +405,14 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
 /* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  .guide-page {
-    background-color: #0f1419;
-    color: #f0f0f0;
-  }
-
-  .guide-content {
-    background-color: #1a1f2e;
-    border-color: #2a3f5f;
-  }
-
-  .document-item:hover {
-    box-shadow: 0 4px 12px rgba(100, 180, 255, 0.1);
-  }
-
-  .specs-table {
-    background-color: #0f1419;
-  }
-
-  .faq-item:hover {
-    box-shadow: 0 4px 12px rgba(100, 180, 255, 0.1);
-  }
-}
+/* Dark mode handled by data-theme attribute below */
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -542,25 +522,46 @@
   color: var(--color-text-muted);
 }
 
-[data-theme='dark'] .faq-section {
+[data-theme='dark'] .document-item {
+  background-color: var(--color-background);
+}
+
+[data-theme='dark'] .faq-item {
   background-color: var(--color-background);
   border-color: var(--color-border);
 }
 
-[data-theme='dark'] .disclaimer {
+[data-theme='dark'] .guide-disclaimer {
+  background-color: var(--color-background);
+  border-left-color: #ff9800;
+  /* Keep the orange accent */
+}
+
+[data-theme='dark'] .specs-table {
+  background-color: var(--color-background);
+}
+
+[data-theme='dark'] .specs-table thead {
+  background-color: var(--color-primary);
+  /* Or a darker variant if needed, but primary usually works */
+}
+
+[data-theme='dark'] .specs-table td {
+  border-color: var(--color-border);
+}
+
+[data-theme='dark'] .specs-table tbody tr:hover {
+  background-color: var(--color-surface);
+}
+
+[data-theme='dark'] .source-link,
+[data-theme='dark'] .related-guide-link {
   background-color: var(--color-background);
   border-color: var(--color-border);
 }
 
-[data-theme='dark'] .callout {
-  background-color: var(--color-background);
-  color: var(--color-text-main);
-}
-
-[data-theme='dark'] .guide-table {
-  border-color: var(--color-border);
-}
-
-[data-theme='dark'] .guide-table tr:hover {
-  background-color: var(--color-background);
+[data-theme='dark'] .source-link:hover,
+[data-theme='dark'] .related-guide-link:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }

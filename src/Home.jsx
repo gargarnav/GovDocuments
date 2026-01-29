@@ -144,9 +144,9 @@ export function Home() {
 
                 <div className="content-container">
                     {/* Interior Linking Section for SEO */}
-                    <section className="popular-services" style={{ padding: '0 0 2rem 0' }}>
+                    <section className="popular-services">
                         <h2>Popular Government Services</h2>
-                        <div className="quick-links" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '1rem' }}>
+                        <div className="quick-links">
                             <Link to="/?search=aadhaar" onClick={() => { setSearchTerm('aadhaar'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Aadhaar Card</Link>
                             <Link to="/?search=pan" onClick={() => { setSearchTerm('pan'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">PAN Card</Link>
                             <Link to="/?search=passport" onClick={() => { setSearchTerm('passport'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Passport</Link>
@@ -187,21 +187,21 @@ export function Home() {
                 <SEOContent />
 
                 {/* Additional Content Section for SEO */}
-                <section className="additional-content-section" style={{ padding: '2rem', background: '#fff', marginTop: '2rem' }}>
+                <section className="additional-content-section">
                     <div className="content-container">
                         <h2>Complete Guide to Government Document Applications</h2>
-                        <p style={{ marginBottom: '1.5rem', lineHeight: '1.7' }}>
+                        <p>
                             Applying for government documents in India takes preparation. Each service has its own rules.
                             If you are applying for the first time or updating a document, having the right papers saves time and avoids rejections.
                             Our guides cover identity cards, travel documents, certificates, and more.
                         </p>
-                        <p style={{ marginBottom: '1.5rem', lineHeight: '1.7' }}>
+                        <p>
                             Government portals have strict file size and format rules. For example, a passport photo may need a JPEG under 200KB.
                             PAN card photos often require a 3.5x2.5cm size. Knowing these rules before upload prevents delays.
                             Our checklists help you prepare everything before you start.
                         </p>
-                        <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Common Application Mistakes to Avoid</h3>
-                        <p style={{ marginBottom: '1.5rem', lineHeight: '1.7' }}>
+                        <h3>Common Application Mistakes to Avoid</h3>
+                        <p>
                             Many applications fail due to small mistakes. Common issues include name mismatches, wrong file formats, large images, and missing self‑attestation.
                             We list these problems and simple fixes so your application moves faster. Always match your name, date of birth, and address on every document.
                         </p>
@@ -209,32 +209,15 @@ export function Home() {
                 </section>
 
                 {/* FAQ Section for SEO Content Depth */}
-                <section className="faq-section" style={{ padding: '2rem', background: '#fff', marginTop: '2rem' }}>
+                <section className="faq-section">
                     <div className="content-container">
                         <h2>Detailed Guides for Government Documents</h2>
-                        <p style={{ marginBottom: '2rem', color: '#666', lineHeight: '1.7' }}>
+                        <p className="section-desc">
                             Need detailed step-by-step guidance on specific documents? Our comprehensive guides cover every major government service with complete checklists, FAQ answers, and official government references.
                         </p>
-                        <Link 
-                            to="/guides" 
-                            style={{
-                                display: 'inline-block',
-                                padding: '0.75rem 1.5rem',
-                                background: '#003366',
-                                color: 'white',
-                                borderRadius: '6px',
-                                textDecoration: 'none',
-                                fontWeight: '600',
-                                transition: 'all 0.3s ease'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.background = '#001f4d';
-                                e.currentTarget.style.transform = 'translateY(-2px)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.background = '#003366';
-                                e.currentTarget.style.transform = 'translateY(0)';
-                            }}
+                        <Link
+                            to="/guides"
+                            className="guides-link-btn"
                         >
                             Browse All Guides →
                         </Link>
@@ -242,10 +225,10 @@ export function Home() {
                 </section>
 
                 {/* FAQ Section for SEO Content Depth */}
-                <section className="faq-section" style={{ padding: '2rem', background: '#fff', marginTop: '2rem' }}>
+                <section className="faq-section">
                     <div className="content-container">
                         <h2>FAQs About Aadhaar, PAN & Passport Document</h2>
-                        <div className="faq-grid" style={{ display: 'grid', gap: '1.5rem', marginTop: '1.5rem' }}>
+                        <div className="faq-grid">
                             <article>
                                 <h3>How do I apply for a PAN Card online?</h3>
                                 <p>Visit the NSDL or UTIITSL website. You will need proof of identity (Aadhaar), proof of address, and a photo. Our guide lists the exact file sizes.</p>
