@@ -4,7 +4,7 @@ export function Hero({ searchTerm, onSearchChange }) {
     return (
         <section className="hero">
             <div className="hero-content">
-                <h1>Indian Government Documents & Certificate Guide</h1>
+                <h1>Government Document Requirements in India – BharatApply</h1>
                 <p>Find exact document requirements and file specifications for all your essential applications.</p>
 
                 <div className="search-bar-container">

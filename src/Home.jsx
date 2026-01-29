@@ -7,6 +7,7 @@ import { DocumentModal } from './components/DocumentModal';
 import { services, categories } from './data/services';
 import { AdContainer } from './components/AdContainer';
 import { SEOHead } from './components/SEOHead';
+import { SEOContent } from './components/SEOContent';
 import { Menu, Facebook, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -80,7 +81,20 @@ export function Home() {
                 <Hero searchTerm={searchTerm} onSearchChange={setSearchTerm} />
 
 
-
+                <div className="content-container">
+                    {/* Interior Linking Section for SEO */}
+                    <section className="popular-services" style={{ padding: '0 0 2rem 0' }}>
+                        <h2>Popular Government Services</h2>
+                        <div className="quick-links" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '1rem' }}>
+                            <button onClick={() => { setSearchTerm('Aadhaar'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Aadhaar Card</button>
+                            <button onClick={() => { setSearchTerm('PAN'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">PAN Card</button>
+                            <button onClick={() => { setSearchTerm('Passport'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Passport</button>
+                            <button onClick={() => { setSearchTerm('Driving'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Driving License</button>
+                            <button onClick={() => { setSearchTerm('Birth'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Birth Certificate</button>
+                            <button onClick={() => { setSearchTerm('Income'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Income Certificate</button>
+                        </div>
+                    </section>
+                </div>
                 <div className="content-container">
                     <section className="services-section">
                         <div className="section-header">
@@ -108,10 +122,13 @@ export function Home() {
                     </section>
                 </div>
 
+                {/* Rich Semantic Content for SEO */}
+                <SEOContent setSearchTerm={setSearchTerm} />
+
                 {/* FAQ Section for SEO Content Depth */}
                 <section className="faq-section" style={{ padding: '2rem', background: '#fff', marginTop: '2rem' }}>
                     <div className="content-container">
-                        <h2>Frequently Asked Questions about Indian Government Documents</h2>
+                        <h2>FAQs About Aadhaar, PAN & Passport Document</h2>
                         <div className="faq-grid" style={{ display: 'grid', gap: '1.5rem', marginTop: '1.5rem' }}>
                             <article>
                                 <h3>How do I apply for a PAN Card online?</h3>
