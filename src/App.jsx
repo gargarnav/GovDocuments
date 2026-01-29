@@ -34,8 +34,7 @@ const Loading = () => (
 function App() {
   return (
     <Router>
-      <MarketingAnalytics />
-      <Analytics />
+      <SiteAnalytics />
       <AdLoader />
       <div className="app-container">
         <Header />
