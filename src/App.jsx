@@ -7,6 +7,7 @@ import './layout.css';
 import './about.css';
 import { Header } from './components/Header';
 import { Analytics } from './components/Analytics';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 import { AdLoader } from './components/AdLoader';
 
 // Lazy loading components for performance
@@ -44,7 +45,7 @@ function App() {
           </Routes>
         </Suspense>
 
-
+        <VercelAnalytics />
       </div>
     </Router>
   );
