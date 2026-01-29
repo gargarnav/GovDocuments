@@ -7,6 +7,7 @@ import './layout.css';
 import './about.css';
 import { Header } from './components/Header';
 import { Analytics } from './components/Analytics';
+import { AdLoader } from './components/AdLoader';
 
 // Lazy loading components for performance
 const Home = lazy(() => import('./Home').then(module => ({ default: module.Home })));
@@ -28,6 +29,7 @@ function App() {
   return (
     <Router>
       <Analytics />
+      <AdLoader />
       <div className="app-container">
         <Header />
 
