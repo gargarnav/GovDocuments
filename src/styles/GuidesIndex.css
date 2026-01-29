@@ -1,14 +1,19 @@
 /* GuidesIndex.css - Styles for guides listing page */
 
 .guides-index {
-  min-height: 100vh;
-  padding: 2rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
   background-color: var(--color-background);
   color: var(--color-text-main);
   overflow-y: auto;
 }
 
 .guides-container {
+  padding: 2rem 1rem;
+  width: 100%;
+  flex: 1;
   max-width: 1200px;
   margin: 0 auto;
 }

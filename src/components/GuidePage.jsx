@@ -10,10 +10,10 @@ import '../styles/GuidePage.css';
 export default function GuidePage() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  
+
   // Find the guide page by slug
   const guide = guidePages.find(g => g.slug === slug);
-  
+
   if (!guide) {
     return (
       <div className="guide-not-found">
@@ -62,8 +62,8 @@ export default function GuidePage() {
         <div className="guide-container">
           {/* Header & Navigation */}
           <div className="guide-header">
-            <button 
-              onClick={() => navigate('/guides')} 
+            <button
+              onClick={() => navigate('/guides')}
               className="btn-back"
               aria-label="Back to guides"
             >
@@ -122,7 +122,7 @@ export default function GuidePage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {Object.entries(guide.fileSpecs).map(([docType, specs], idx) => 
+                    {Object.entries(guide.fileSpecs).map(([docType, specs], idx) =>
                       Object.entries(specs).map(([key, value], specIdx) => (
                         <tr key={`${idx}-${specIdx}`}>
                           <td>{specIdx === 0 ? docType : ''}</td>
@@ -154,7 +154,7 @@ export default function GuidePage() {
               <h2>Sources & Official References</h2>
               <div className="sources-list">
                 {guide.sources.map((source, idx) => (
-                  <a 
+                  <a
                     key={idx}
                     href={source.url}
                     target="_blank"
@@ -176,7 +176,7 @@ export default function GuidePage() {
                   .filter(g => g.category === guide.category && g.slug !== guide.slug)
                   .slice(0, 3)
                   .map((relatedGuide) => (
-                    <a 
+                    <a
                       key={relatedGuide.slug}
                       href={`/guides/${relatedGuide.slug}`}
                       className="related-guide-link"
@@ -192,16 +192,15 @@ export default function GuidePage() {
             <div className="guide-disclaimer">
               <AlertCircle size={16} />
               <p>
-                <strong>Disclaimer:</strong> This guide provides general information about document requirements. 
-                Specific requirements may vary by state or local authority. Always verify with official government portals 
+                <strong>Disclaimer:</strong> This guide provides general information about document requirements.
+                Specific requirements may vary by state or local authority. Always verify with official government portals
                 before submission. BharatApply.online is not affiliated with the Government of India.
               </p>
             </div>
           </article>
         </div>
+        <Footer />
       </div>
-
-      <Footer />
     </>
   );
 }

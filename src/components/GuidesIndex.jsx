@@ -227,9 +227,8 @@ export default function GuidesIndex() {
             </p>
           </section>
         </div>
+        <Footer />
       </div>
-
-      <Footer />
     </>
   );
 }

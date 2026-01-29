@@ -192,28 +192,30 @@
     font-size: 0.9rem;
     color: var(--color-text-muted);
 }
+
 /* Dark Mode Support for Home Page Lower Sections */
 
 .additional-content-section,
 .faq-section {
-  padding: 2rem;
-  background-color: var(--color-surface); /* Replaced #fff */
-  margin-top: 2rem;
-  border-top: 1px solid var(--color-border);
-  transition: background-color 0.3s ease;
+    padding: 2rem;
+    background-color: var(--color-surface);
+    /* Replaced #fff */
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    transition: background-color 0.3s ease;
 }
 
 .additional-content-section p,
 .faq-section p {
-  color: var(--color-text-secondary);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
 }
 
 .additional-content-section h2,
 .faq-section h2 {
-  color: var(--color-primary);
-  margin-bottom: 1rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
 }
 
 .additional-content-section h3 {
@@ -255,12 +257,25 @@
 }
 
 /* Footer Styles Refactored */
+/* Footer Styles Refactored */
+.footer {
+    width: 100%;
+    margin-top: auto;
+    background-color: var(--color-primary);
+    /* Default Light Mode: Deep Blue */
+    color: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
 .footer-content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    padding-bottom: 2rem;
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .footer-links {
@@ -269,6 +284,19 @@
     flex-wrap: wrap;
     justify-content: center;
     max-width: 800px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: white;
+    text-decoration: underline;
 }
 
 .social-links {
@@ -280,35 +308,76 @@
     max-width: 700px;
     text-align: center;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-disclaimer {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.footer-disclaimer strong {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .official-portals {
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
 }
 
 .official-portals a {
     margin-left: 0.5rem;
-    color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
 }
 
 .official-portals a:hover {
-    text-decoration: underline;
+    color: white;
+    border-bottom-style: solid;
 }
 
 .copyright {
     font-size: 0.85rem;
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.6);
     margin: 0;
+}
+
+/* Dark Mode Specific Overrides for Footer */
+[data-theme='dark'] .footer {
+    background-color: var(--color-surface);
+    /* Dark Mode: Dark Grey */
+    border-top: 1px solid var(--color-border);
+}
+
+[data-theme='dark'] .footer-links a {
+    color: var(--color-text-muted);
+}
+
+[data-theme='dark'] .footer-links a:hover {
+    color: var(--color-primary);
+}
+
+[data-theme='dark'] .trust-section {
+    border-top-color: var(--color-border);
+}
+
+[data-theme='dark'] .footer-disclaimer,
+[data-theme='dark'] .official-portals,
+[data-theme='dark'] .copyright {
+    color: var(--color-text-muted);
+}
+
+[data-theme='dark'] .footer-disclaimer strong {
+    color: var(--color-text-main);
+}
+
+[data-theme='dark'] .official-portals a {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
 }
 
 .guides-link-btn {
@@ -323,7 +392,8 @@
 }
 
 .guides-link-btn:hover {
-    background: var(--color-primary-dark, #001f4d); /* Fallback if var not defined */
+    background: var(--color-primary-dark, #001f4d);
+    /* Fallback if var not defined */
     transform: translateY(-2px);
     color: white;
 }
@@ -331,6 +401,7 @@
 /* Dark Mode Specific Overrides if needed, though vars should handle most */
 [data-theme='dark'] .additional-content-section,
 [data-theme='dark'] .faq-section {
-    background-color: var(--color-surface); /* Ensures it stays dark */
+    background-color: var(--color-surface);
+    /* Ensures it stays dark */
     border-color: var(--color-border);
 }
