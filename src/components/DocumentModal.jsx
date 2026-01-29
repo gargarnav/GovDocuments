@@ -1,7 +1,9 @@
-import { X, FileCheck, Image, FileText } from 'lucide-react';
-import { useEffect } from 'react';
+import { X, FileCheck, Image, FileText, Share2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export function DocumentModal({ service, onClose }) {
+    const [showCopiedToast, setShowCopiedToast] = useState(false);
+
     useEffect(() => {
         // Prevent scrolling when modal is open
         document.body.style.overflow = 'hidden';
@@ -12,12 +14,43 @@ export function DocumentModal({ service, onClose }) {
 
     if (!service) return null;
 
+    const handleShare = async () => {
+        const shareData = {
+            title: service.title,
+            text: `Check out the requirements for ${service.title} on BharatApply!`,
+            url: window.location.href
+        };
+
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (err) {
+                console.log('Error sharing:', err);
+            }
+        } else {
+            // Fallback to clipboard
+            try {
+                await navigator.clipboard.writeText(`${shareData.title} - ${shareData.url}`);
+                setShowCopiedToast(true);
+                setTimeout(() => setShowCopiedToast(false), 2000);
+            } catch (err) {
+                console.error('Failed to copy code: ', err);
+            }
+        }
+    };
+
     return (
         <div className="modal-overlay" onClick={onClose}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
-                <button className="close-button" onClick={onClose}>
-                    <X size={24} />
-                </button>
+                <div className="modal-actions-bar">
+                    <button className="icon-button share-button" onClick={handleShare} title="Share">
+                        <Share2 size={20} />
+                        {showCopiedToast && <span className="tooltip">Copied!</span>}
+                    </button>
+                    <button className="icon-button close-button" onClick={onClose}>
+                        <X size={24} />
+                    </button>
+                </div>
 
                 <header className="modal-header">
                     <div className="modal-icon-wrapper">
