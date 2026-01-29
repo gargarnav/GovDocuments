@@ -8,8 +8,11 @@ import { services, categories } from './data/services';
 import { AdContainer } from './components/AdContainer';
 import { SEOHead } from './components/SEOHead';
 import { SEOContent } from './components/SEOContent';
+import { Footer } from './components/Footer';
 import { Menu, Facebook, Twitter } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { websiteSchema, faqSchema, organizationSchema } from './utils/seoSchemas';
+import { pageMetadata, lastUpdatedDate } from './utils/pageMetadata';
 
 export function Home() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -97,38 +100,19 @@ export function Home() {
     return (
         <div className="main-layout">
             <SEOHead
-                title="Government Document Guide"
-                description="BharatApply: Your trusted guide for government documents in India. Easily find, apply, and track Aadhar, PAN, Passport, Driving License, and more."
-                canonicalUrl={canonicalUrl}
-                ogImage="https://bharatapply.online/og-image.svg"
-                robots={robots}
-                h1Text="Government Document Requirements in India – BharatApply"
-                schema={{
-                    "@context": "https://schema.org",
-                    "@graph": [
-                        {
-                            "@type": "WebSite",
-                            "name": "BharatApply",
-                            "url": "https://bharatapply.online",
-                            "potentialAction": {
-                                "@type": "SearchAction",
-                                "target": "https://bharatapply.online/?search={search_term_string}",
-                                "query-input": "required name=search_term_string"
-                            }
-                        },
-                        {
-                            "@type": "FAQPage",
-                            "mainEntity": faqItems.map(item => ({
-                                "@type": "Question",
-                                "name": item.question,
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": item.answer
-                                }
-                            }))
-                        }
-                    ]
-                }}
+                title={pageMetadata.home.title}
+                description={pageMetadata.home.description}
+                keywords={pageMetadata.home.keywords}
+                canonicalUrl="https://bharatapply.online"
+                ogImage={pageMetadata.home.ogImage}
+                robots={hasParams ? 'noindex,follow' : undefined}
+                datePublished={lastUpdatedDate}
+                dateModified={lastUpdatedDate}
+                schema={[
+                    organizationSchema,
+                    websiteSchema(),
+                    faqSchema(faqItems)
+                ]}
             />
             <Sidebar
                 categories={categories}
@@ -227,6 +211,39 @@ export function Home() {
                 {/* FAQ Section for SEO Content Depth */}
                 <section className="faq-section" style={{ padding: '2rem', background: '#fff', marginTop: '2rem' }}>
                     <div className="content-container">
+                        <h2>Detailed Guides for Government Documents</h2>
+                        <p style={{ marginBottom: '2rem', color: '#666', lineHeight: '1.7' }}>
+                            Need detailed step-by-step guidance on specific documents? Our comprehensive guides cover every major government service with complete checklists, FAQ answers, and official government references.
+                        </p>
+                        <Link 
+                            to="/guides" 
+                            style={{
+                                display: 'inline-block',
+                                padding: '0.75rem 1.5rem',
+                                background: '#003366',
+                                color: 'white',
+                                borderRadius: '6px',
+                                textDecoration: 'none',
+                                fontWeight: '600',
+                                transition: 'all 0.3s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.background = '#001f4d';
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.background = '#003366';
+                                e.currentTarget.style.transform = 'translateY(0)';
+                            }}
+                        >
+                            Browse All Guides →
+                        </Link>
+                    </div>
+                </section>
+
+                {/* FAQ Section for SEO Content Depth */}
+                <section className="faq-section" style={{ padding: '2rem', background: '#fff', marginTop: '2rem' }}>
+                    <div className="content-container">
                         <h2>FAQs About Aadhaar, PAN & Passport Document</h2>
                         <div className="faq-grid" style={{ display: 'grid', gap: '1.5rem', marginTop: '1.5rem' }}>
                             <article>
@@ -257,28 +274,7 @@ export function Home() {
                     </div>
                 </section>
 
-                <footer className="footer">
-                    <div className="footer-content" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
-                        <div className="footer-links" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                            <Link to="/">Home</Link>
-                            <Link to="/about">About Us</Link>
-                            <Link to="/?search=aadhaar">Aadhaar</Link>
-                            <Link to="/?search=pan">PAN Card</Link>
-                            <Link to="/?search=passport">Passport</Link>
-                            <Link to="/?search=driving">Driving License</Link>
-                            <Link to="/?search=voter">Voter ID</Link>
-                        </div>
-                        <div className="social-links" style={{ display: 'flex', gap: '1rem' }}>
-                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                                <Facebook size={24} />
-                            </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                                <Twitter size={24} />
-                            </a>
-                        </div>
-                        <p>© 2024 BharatApply. Not affiliated with the Government of India.</p>
-                    </div>
-                </footer>
+                <Footer />
             </div>
 
             <DocumentModal

@@ -1,0 +1,521 @@
+/* GuidePage.css - Styles for individual guide pages */
+
+.guide-page {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.guide-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header & Navigation */
+.guide-header {
+  margin-bottom: 2rem;
+  animation: slideDown 0.5s ease;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--card-bg);
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-back:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateX(-2px);
+}
+
+/* Main Content */
+.guide-content {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  line-height: 1.8;
+}
+
+/* Meta Info */
+.guide-meta {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.guide-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.guide-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.update-date {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Intro Section */
+.intro-section {
+  margin-bottom: 2.5rem;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  background: var(--bg-color);
+  padding: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 4px;
+}
+
+/* Guide Sections */
+.guide-section {
+  margin-bottom: 2.5rem;
+}
+
+.guide-section h2 {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Documents Section */
+.documents-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.document-item {
+  background: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.document-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+}
+
+.document-item h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.doc-description {
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.doc-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.doc-options li {
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.doc-options li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Specifications Table */
+.specs-section {
+  overflow-x: auto;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: var(--bg-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.specs-table thead {
+  background: var(--primary-color);
+  color: white;
+}
+
+.specs-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.specs-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.specs-table tbody tr:hover {
+  background: var(--card-bg);
+}
+
+.specs-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* FAQ Section */
+.faq-items {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+}
+
+.faq-item summary {
+  padding: 0.5rem 0;
+  font-weight: 600;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  list-style: none;
+}
+
+.faq-item summary::marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '▼';
+  display: inline-block;
+  transition: transform 0.3s ease;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(-180deg);
+}
+
+.faq-item p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Sources Section */
+.sources-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--bg-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.source-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+.source-link svg {
+  flex-shrink: 0;
+}
+
+/* Related Guides Section */
+.related-guides {
+  display: grid;
+  gap: 1rem;
+}
+
+.related-guide-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--bg-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.related-guide-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateX(4px);
+}
+
+.guide-title-small {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.arrow {
+  margin-left: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.related-guide-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Disclaimer */
+.guide-disclaimer {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--bg-color);
+  border-left: 4px solid #ff9800;
+  border-radius: 4px;
+  margin-top: 2rem;
+}
+
+.guide-disclaimer svg {
+  color: #ff9800;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.guide-disclaimer p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.guide-disclaimer strong {
+  color: var(--text-color);
+}
+
+/* Not Found Page */
+.guide-not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: var(--bg-color);
+}
+
+.guide-not-found h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.guide-not-found p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .guide-page {
+    background: #0f1419;
+    color: #f0f0f0;
+  }
+
+  .guide-content {
+    background: #1a1f2e;
+    border-color: #2a3f5f;
+  }
+
+  .document-item:hover {
+    box-shadow: 0 4px 12px rgba(100, 180, 255, 0.1);
+  }
+
+  .specs-table {
+    background: #0f1419;
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 4px 12px rgba(100, 180, 255, 0.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .guide-content {
+    padding: 1.5rem;
+  }
+
+  .guide-title {
+    font-size: 1.6rem;
+  }
+
+  .guide-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .guide-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .specs-table {
+    font-size: 0.85rem;
+  }
+
+  .specs-table th,
+  .specs-table td {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-page {
+    padding: 1rem;
+  }
+
+  .guide-content {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .guide-title {
+    font-size: 1.4rem;
+  }
+
+  .guide-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .intro-text {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .document-item {
+    padding: 1rem;
+  }
+
+  .document-item h3 {
+    font-size: 1rem;
+  }
+
+  .specs-table {
+    font-size: 0.75rem;
+  }
+
+  .specs-table th,
+  .specs-table td {
+    padding: 0.5rem;
+  }
+
+  .faq-item {
+    padding: 0.75rem;
+  }
+
+  .faq-item summary {
+    font-size: 0.95rem;
+  }
+
+  .guide-disclaimer {
+    padding: 1rem;
+  }
+
+  .guide-disclaimer p {
+    font-size: 0.85rem;
+  }
+}

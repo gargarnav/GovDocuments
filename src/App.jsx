@@ -12,6 +12,8 @@ import { AdLoader } from './components/AdLoader';
 // Lazy loading components for performance
 const Home = lazy(() => import('./Home').then(module => ({ default: module.Home })));
 const About = lazy(() => import('./components/About').then(module => ({ default: module.About })));
+const GuidesIndex = lazy(() => import('./components/GuidesIndex'));
+const GuidePage = lazy(() => import('./components/GuidePage'));
 
 const Loading = () => (
   <div style={{
@@ -37,6 +39,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/guides" element={<GuidesIndex />} />
+            <Route path="/guides/:slug" element={<GuidePage />} />
           </Routes>
         </Suspense>
 

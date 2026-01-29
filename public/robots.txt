@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
+Allow: /?service=*
+Allow: /?search=*
+Allow: /about
+Allow: /guides
+Allow: /guides/*
+Allow: /og-image.svg
+
+Disallow: /node_modules/
+Disallow: /.git/
 
 Sitemap: https://bharatapply.online/sitemap.xml
+Sitemap: https://bharatapply.online/sitemap-services.xml
+Sitemap: https://bharatapply.online/sitemap-guides.xml

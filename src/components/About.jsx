@@ -1,22 +1,24 @@
 import { SEOHead } from './SEOHead';
+import { Footer } from './Footer';
 import { Link } from 'react-router-dom';
+import { organizationSchema, articleSchema } from '../utils/seoSchemas';
+import { pageMetadata, lastUpdatedDate } from '../utils/pageMetadata';
 
 export function About() {
     return (
         <div className="about-container">
             <SEOHead
-                title="About BharatApply"
-                description="Learn about BharatApply's mission to simplify Indian government documentation. We provide clear checklists and file requirements for confident applications."
+                title={pageMetadata.about.title}
+                description={pageMetadata.about.description}
+                keywords={pageMetadata.about.keywords}
                 canonicalUrl="https://bharatapply.online/about"
-                ogImage="https://bharatapply.online/og-image.svg"
-                h1Text="About BharatApply - Government Document Guide"
-                schema={{
-                    "@context": "https://schema.org",
-                    "@type": "Organization",
-                    "name": "BharatApply",
-                    "url": "https://bharatapply.online",
-                    "logo": "https://bharatapply.online/favicon.svg"
-                }}
+                ogImage={pageMetadata.about.ogImage}
+                datePublished={lastUpdatedDate}
+                dateModified={lastUpdatedDate}
+                schema={[
+                    organizationSchema,
+                    articleSchema("About BharatApply", pageMetadata.about.description, lastUpdatedDate, lastUpdatedDate)
+                ]}
             />
             <div className="about-content">
                 {/* EDIT SECTION 1: HEADER */}
@@ -113,18 +115,7 @@ export function About() {
                     </p>
                 </section>
             </div>
-            <footer className="footer" style={{ marginTop: 'auto' }}>
-                <div className="footer-content" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
-                    <div className="footer-links" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                        <Link to="/">Home</Link>
-                        <Link to="/about">About Us</Link>
-                        <Link to="/?search=aadhaar">Aadhaar</Link>
-                        <Link to="/?search=pan">PAN Card</Link>
-                        <Link to="/?search=passport">Passport</Link>
-                    </div>
-                    <p>© 2024 BharatApply. Not affiliated with the Government of India.</p>
-                </div>
-            </footer>
-        </div >
+            <Footer />
+        </div>
     );
 }
