@@ -141,6 +141,7 @@ export function Home() {
                 </div>
                 <Hero searchTerm={searchTerm} onSearchChange={setSearchTerm} />
 
+                <DelayedAd />
 
                 <div className="content-container">
                     {/* Interior Linking Section for SEO */}

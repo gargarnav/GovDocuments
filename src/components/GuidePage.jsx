@@ -5,6 +5,7 @@ import { guidePages } from '../data/guidePages';
 import { breadcrumbSchema as createBreadcrumbSchema, faqSchema as createFaqSchema } from '../utils/seoSchemas';
 import { SEOHead } from './SEOHead';
 import { Footer } from './Footer';
+import { DelayedAd } from './DelayedAd';
 import '../styles/GuidePage.css';
 
 export default function GuidePage() {
@@ -197,6 +198,8 @@ export default function GuidePage() {
                 before submission. BharatApply.online is not affiliated with the Government of India.
               </p>
             </div>
+
+            <DelayedAd />
           </article>
         </div>
         <Footer />

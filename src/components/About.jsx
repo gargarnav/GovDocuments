@@ -1,5 +1,6 @@
 import { SEOHead } from './SEOHead';
 import { Footer } from './Footer';
+import { DelayedAd } from './DelayedAd';
 import { Link } from 'react-router-dom';
 import { organizationSchema, articleSchema } from '../utils/seoSchemas';
 import { pageMetadata, lastUpdatedDate } from '../utils/pageMetadata';
@@ -114,8 +115,9 @@ export function About() {
                         While we strive for accuracy, official rules may change. Please always verify with the respective official government portals like <a href="https://uidai.gov.in" target="_blank" rel="nofollow">uidai.gov.in</a>, <a href="https://passportindia.gov.in" target="_blank" rel="nofollow">passportindia.gov.in</a>, or <a href="https://incometax.gov.in" target="_blank" rel="nofollow">incometax.gov.in</a>.
                     </p>
                 </section>
+                <DelayedAd />
             </div>
             <Footer />
-        </div>
+        </div >
     );
 }
