@@ -94,7 +94,7 @@ export function Home() {
     return (
         <div className="main-layout">
             <SEOHead
-                title="Indian Government Documents Guide"
+                title="Government Document Guide"
                 description="BharatApply: Your trusted guide for government documents in India. Easily find, apply, and track Aadhar, PAN, Passport, Driving License, and more."
                 canonicalUrl="https://bharatapply.online"
                 ogImage="https://bharatapply.online/og-image.svg"
