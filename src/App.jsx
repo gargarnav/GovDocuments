@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import './App.css';
@@ -6,9 +5,13 @@ import './modal.css';
 import './layout.css';
 import './about.css';
 import { Header } from './components/Header';
-import { Analytics as MarketingAnalytics } from './components/Analytics';
-import { Analytics } from '@vercel/analytics/react';
+
+import { Analytics as SiteAnalytics } from './components/Analytics';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
+
 import { AdLoader } from './components/AdLoader';
+
+// Lazy loading components for performance
 
 // Lazy loading components for performance
 const Home = lazy(() => import('./Home').then(module => ({ default: module.Home })));
@@ -46,7 +49,7 @@ function App() {
           </Routes>
         </Suspense>
 
-
+        <VercelAnalytics />
       </div>
     </Router>
   );
