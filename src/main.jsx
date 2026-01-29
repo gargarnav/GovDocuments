@@ -6,6 +6,18 @@ import App from './App.jsx'
 
 import { ThemeProvider } from './context/ThemeContext.jsx'
 
+// Defer analytics and ads to improve LCP
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-YOUR-ID';
+      document.head.appendChild(gaScript);
+    }, 3000);
+  });
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>
