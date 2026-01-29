@@ -44,42 +44,41 @@
   gap: 1.5rem;
 }
 
-.search-wrapper {
+.guides-search-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
-  background: var(--color-surface);
-  border: 2px solid var(--color-border);
-  border-radius: 8px;
-  padding: 0.5rem 1.25rem;
-  transition: all 0.3s ease;
-  gap: 0.75rem;
+  max-width: 100%;
 }
 
-.search-wrapper:focus-within {
+.guides-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.guides-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  background: var(--color-surface);
+  font-size: 1rem;
+  outline: none;
+  color: var(--color-text-main);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.guides-search-input:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
 }
 
-.search-icon {
-  color: var(--color-text-muted);
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-}
-
-.search-input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  font-size: 1rem;
-  padding: 0.5rem 0.5rem 0.5rem 0;
-  outline: none;
-  color: var(--color-text-main);
-  min-width: 0;
-}
-
-.search-input::placeholder {
+.guides-search-input::placeholder {
   color: var(--color-text-muted);
 }
 
@@ -395,6 +394,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -402,16 +402,7 @@
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .guides-index {
-    background: #0f1419;
-    color: #f0f0f0;
-  }
-
-  .search-wrapper:focus-within {
-    box-shadow: 0 0 0 3px rgba(100, 180, 255, 0.1);
-  }
-}
+/* Dark Mode handled by data-theme attribute below */
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -450,7 +441,7 @@
     font-size: 1.5rem;
   }
 
-  .search-input {
+  .guides-search-input {
     font-size: 14px;
   }
 
@@ -477,12 +468,16 @@
   color: var(--color-text-main);
 }
 
-[data-theme='dark'] .search-wrapper {
+[data-theme='dark'] .guides-search-input {
   background-color: var(--color-surface);
   border-color: var(--color-border);
 }
 
-[data-theme='dark'] .search-input::placeholder {
+[data-theme='dark'] .guides-search-input:focus {
+  box-shadow: 0 0 0 3px rgba(100, 180, 255, 0.1);
+}
+
+[data-theme='dark'] .guides-search-input::placeholder {
   color: var(--color-text-muted);
 }
 

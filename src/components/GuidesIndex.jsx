@@ -23,8 +23,8 @@ export default function GuidesIndex() {
   // Filter guides based on search and category
   const filteredGuides = guidePages.filter(guide => {
     const matchesSearch = guide.h1.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         guide.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         guide.keywords.toLowerCase().includes(searchTerm.toLowerCase());
+      guide.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      guide.keywords.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'all' || guide.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
@@ -68,14 +68,14 @@ export default function GuidesIndex() {
 
           {/* Search & Filter Section */}
           <div className="guides-search-section">
-            <div className="search-wrapper">
-              <Search size={18} className="search-icon" />
+            <div className="guides-search-wrapper">
+              <Search size={18} className="guides-search-icon" />
               <input
                 type="text"
                 placeholder="Search guides (e.g., 'passport renewal', 'aadhaar address')..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-input"
+                className="guides-search-input"
                 aria-label="Search guides"
               />
             </div>
@@ -221,8 +221,8 @@ export default function GuidesIndex() {
 
             <h2>Getting Started</h2>
             <p>
-              Select a guide from above to learn exact document requirements, specifications, fees, processing times, 
-              and answers to frequently asked questions. Each guide includes official government portal links for 
+              Select a guide from above to learn exact document requirements, specifications, fees, processing times,
+              and answers to frequently asked questions. Each guide includes official government portal links for
               direct verification and application.
             </p>
           </section>
