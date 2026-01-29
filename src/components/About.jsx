@@ -8,17 +8,14 @@ export function About() {
                 title="About BharatApply"
                 description="Learn about BharatApply's mission to simplify Indian government documentation. We provide clear checklists and file requirements for confident applications."
                 canonicalUrl="https://bharatapply.online/about"
+                ogImage="https://bharatapply.online/og-image.svg"
                 h1Text="About BharatApply - Government Document Guide"
                 schema={{
                     "@context": "https://schema.org",
                     "@type": "Organization",
                     "name": "BharatApply",
                     "url": "https://bharatapply.online",
-                    "logo": "https://bharatapply.online/favicon.svg",
-                    "sameAs": [
-                        "https://facebook.com/bharatapply",
-                        "https://twitter.com/bharatapply"
-                    ]
+                    "logo": "https://bharatapply.online/favicon.svg"
                 }}
             />
             <div className="about-content">

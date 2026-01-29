@@ -64,23 +64,66 @@ export function Home() {
 
     const activeCategory = categories.find(c => c.id === selectedCategory);
 
+    const faqItems = [
+        {
+            question: 'How do I apply for a PAN Card online?',
+            answer: 'To apply for a PAN card, visit the NSDL or UTIITSL website. You will need proof of identity (Aadhaar), proof of address, and a photograph. Our guide details the exact file sizes needed for upload.'
+        },
+        {
+            question: 'What documents are required for a new Passport?',
+            answer: 'For a fresh passport, you generally need proof of address (Aadhaar, Voter ID, etc.), proof of date of birth (Birth Certificate, 10th Marksheet), and possibly a non-ECR proof if eligible.'
+        },
+        {
+            question: 'Is it mandatory to link Aadhaar with PAN?',
+            answer: 'Yes, as per CBDT guidelines, linking Aadhaar with PAN is mandatory to prevent your PAN from becoming inoperative. Ensure your demographic details match in both documents.'
+        },
+        {
+            question: 'How can I update my Aadhaar details?',
+            answer: 'You can update your address online via the myAadhaar portal. For biometric or name changes, you must visit a permanent enrolment center. Check our specific service card for document lists.'
+        },
+        {
+            question: 'What is the processing time for government documents?',
+            answer: 'Processing times vary by service. Aadhaar updates typically take 7-15 days, PAN card applications take 15-20 days, and passport applications can take 30-45 days depending on the type of application and verification required.'
+        },
+        {
+            question: 'Can I track my application status online?',
+            answer: 'Yes, most government portals provide online tracking facilities. You can track your Aadhaar status using your enrolment number, PAN application using your acknowledgment number, and passport status using your file number on the respective official websites.'
+        }
+    ];
+
     return (
         <div className="main-layout">
             <SEOHead
                 title="Indian Government Documents Guide"
                 description="BharatApply: Your trusted guide for government documents in India. Easily find, apply, and track Aadhar, PAN, Passport, Driving License, and more."
                 canonicalUrl="https://bharatapply.online"
+                ogImage="https://bharatapply.online/og-image.svg"
                 h1Text="Government Document Requirements in India – BharatApply"
                 schema={{
                     "@context": "https://schema.org",
-                    "@type": "WebSite",
-                    "name": "BharatApply",
-                    "url": "https://bharatapply.online",
-                    "potentialAction": {
-                        "@type": "SearchAction",
-                        "target": "https://bharatapply.online/?s={search_term_string}",
-                        "query-input": "required name=search_term_string"
-                    }
+                    "@graph": [
+                        {
+                            "@type": "WebSite",
+                            "name": "BharatApply",
+                            "url": "https://bharatapply.online",
+                            "potentialAction": {
+                                "@type": "SearchAction",
+                                "target": "https://bharatapply.online/?search={search_term_string}",
+                                "query-input": "required name=search_term_string"
+                            }
+                        },
+                        {
+                            "@type": "FAQPage",
+                            "mainEntity": faqItems.map(item => ({
+                                "@type": "Question",
+                                "name": item.question,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": item.answer
+                                }
+                            }))
+                        }
+                    ]
                 }}
             />
             <Sidebar

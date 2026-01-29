@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="80" y="90" width="1040" height="450" rx="28" fill="#ffffff" opacity="0.06" />
+  <text x="110" y="250" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700" fill="#f8fafc">
+    BharatApply
+  </text>
+  <text x="110" y="330" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="500" fill="#e2e8f0">
+    Government document requirements in India
+  </text>
+  <text x="110" y="400" font-family="Inter, Arial, sans-serif" font-size="28" fill="#cbd5f5">
+    Aadhaar • PAN • Passport • Driving License • Voter ID
+  </text>
+  <rect x="110" y="450" width="220" height="8" rx="4" fill="#f59e0b" />
+  <rect x="340" y="450" width="220" height="8" rx="4" fill="#ffffff" opacity="0.8" />
+  <rect x="570" y="450" width="220" height="8" rx="4" fill="#22c55e" />
+</svg>
