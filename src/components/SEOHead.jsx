@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 
-export function SEOHead({ title, description, canonicalUrl, ogImage, type = 'website', schema, h1Text }) {
+export function SEOHead({ title, description, canonicalUrl, ogImage, type = 'website', schema, h1Text, robots }) {
     const location = useLocation();
     const siteTitle = 'BharatApply';
     const baseUrl = 'https://bharatapply.online';
@@ -25,6 +25,7 @@ export function SEOHead({ title, description, canonicalUrl, ogImage, type = 'web
             {/* Basic SEO */}
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
+            {robots && <meta name="robots" content={robots} />}
             <link rel="canonical" href={fullUrl} />
 
             {/* H1 tag for SEO - added to body via react-helmet */}

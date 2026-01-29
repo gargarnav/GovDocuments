@@ -63,6 +63,9 @@ export function Home() {
     });
 
     const activeCategory = categories.find(c => c.id === selectedCategory);
+    const hasParams = Array.from(searchParams.keys()).length > 0;
+    const canonicalUrl = 'https://bharatapply.online';
+    const robots = hasParams ? 'noindex,follow' : undefined;
 
     const faqItems = [
         {
@@ -96,8 +99,9 @@ export function Home() {
             <SEOHead
                 title="Government Document Guide"
                 description="BharatApply: Your trusted guide for government documents in India. Easily find, apply, and track Aadhar, PAN, Passport, Driving License, and more."
-                canonicalUrl="https://bharatapply.online"
+                canonicalUrl={canonicalUrl}
                 ogImage="https://bharatapply.online/og-image.svg"
+                robots={robots}
                 h1Text="Government Document Requirements in India – BharatApply"
                 schema={{
                     "@context": "https://schema.org",
@@ -159,12 +163,12 @@ export function Home() {
                     <section className="popular-services" style={{ padding: '0 0 2rem 0' }}>
                         <h2>Popular Government Services</h2>
                         <div className="quick-links" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '1rem' }}>
-                            <Link to="/?search=Aadhaar" onClick={() => { setSearchTerm('Aadhaar'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Aadhaar Card</Link>
-                            <Link to="/?search=PAN" onClick={() => { setSearchTerm('PAN'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">PAN Card</Link>
-                            <Link to="/?search=Passport" onClick={() => { setSearchTerm('Passport'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Passport</Link>
-                            <Link to="/?search=Driving" onClick={() => { setSearchTerm('Driving'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Driving License</Link>
-                            <Link to="/?search=Birth" onClick={() => { setSearchTerm('Birth'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Birth Certificate</Link>
-                            <Link to="/?search=Income" onClick={() => { setSearchTerm('Income'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Income Certificate</Link>
+                            <Link to="/?search=aadhaar" onClick={() => { setSearchTerm('aadhaar'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Aadhaar Card</Link>
+                            <Link to="/?search=pan" onClick={() => { setSearchTerm('pan'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">PAN Card</Link>
+                            <Link to="/?search=passport" onClick={() => { setSearchTerm('passport'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Passport</Link>
+                            <Link to="/?search=driving" onClick={() => { setSearchTerm('driving'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Driving License</Link>
+                            <Link to="/?search=birth" onClick={() => { setSearchTerm('birth'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Birth Certificate</Link>
+                            <Link to="/?search=income" onClick={() => { setSearchTerm('income'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Income Certificate</Link>
                         </div>
                     </section>
                 </div>
@@ -261,11 +265,11 @@ export function Home() {
                         <div className="footer-links" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                             <Link to="/">Home</Link>
                             <Link to="/about">About Us</Link>
-                            <Link to="/?search=Aadhaar">Aadhaar</Link>
-                            <Link to="/?search=PAN">PAN Card</Link>
-                            <Link to="/?search=Passport">Passport</Link>
-                            <Link to="/?search=Driving">Driving License</Link>
-                            <Link to="/?search=Voter">Voter ID</Link>
+                            <Link to="/?search=aadhaar">Aadhaar</Link>
+                            <Link to="/?search=pan">PAN Card</Link>
+                            <Link to="/?search=passport">Passport</Link>
+                            <Link to="/?search=driving">Driving License</Link>
+                            <Link to="/?search=voter">Voter ID</Link>
                         </div>
                         <div className="social-links" style={{ display: 'flex', gap: '1rem' }}>
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">

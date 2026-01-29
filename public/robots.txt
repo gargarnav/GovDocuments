@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+Disallow: /*?search=
+Disallow: /*&search=
+Disallow: /*?s=
+Disallow: /*&s=
+
 Sitemap: https://bharatapply.online/sitemap.xml

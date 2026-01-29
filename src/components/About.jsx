@@ -33,7 +33,7 @@ export function About() {
                         complete applications confidently.
                     </p>
                     <p>
-                        Explore our <Link to="/">comprehensive service directory</Link> to find document requirements for <Link to="/?search=Aadhaar">Aadhaar</Link>, <Link to="/?search=PAN">PAN Card</Link>, <Link to="/?search=Passport">Passport</Link>, and many other government services.
+                        Explore our <Link to="/">comprehensive service directory</Link> to find document requirements for <Link to="/?search=aadhaar">Aadhaar</Link>, <Link to="/?search=pan">PAN Card</Link>, <Link to="/?search=passport">Passport</Link>, and many other government services.
                     </p>
                 </section>
 
@@ -45,7 +45,7 @@ export function About() {
                         On BharatApply, you can find:
                     </p>
                     <ul className="about-list">
-                        <li><strong>Complete Document Checklists:</strong> Know exactly what proofs are accepted for Identity, Address, and Date of Birth. Check our guides for <Link to="/?search=Birth">Birth Certificate</Link>, <Link to="/?search=Income">Income Certificate</Link>, and other essential documents.</li>
+                        <li><strong>Complete Document Checklists:</strong> Know exactly what proofs are accepted for Identity, Address, and Date of Birth. Check our guides for <Link to="/?search=birth">Birth Certificate</Link>, <Link to="/?search=income">Income Certificate</Link>, and other essential documents.</li>
                         <li><strong>File Upload Specifications:</strong> Detailed file size and format (JPEG/PDF) requirements for each portal to avoid upload errors.</li>
                         <li><strong>Photo & Signature Guidelines:</strong> Specific dimensions and pixel resolutions required by NSDL, uidai, and Passport Seva.</li>
                         <li><strong>Step-by-Step Guidance:</strong> (Coming Soon) Detailed walkthroughs for online application portals.</li>
@@ -63,11 +63,11 @@ export function About() {
                         Get started with our most frequently accessed services:
                     </p>
                     <ul className="about-list">
-                        <li><Link to="/?search=Aadhaar">Aadhaar Card</Link> - Enrolment and updates</li>
-                        <li><Link to="/?search=PAN">PAN Card</Link> - New applications and corrections</li>
-                        <li><Link to="/?search=Passport">Passport</Link> - Fresh applications and renewals</li>
-                        <li><Link to="/?search=Driving">Driving License</Link> - Learner's and permanent licenses</li>
-                        <li><Link to="/?search=Voter">Voter ID</Link> - Registration and updates</li>
+                        <li><Link to="/?search=aadhaar">Aadhaar Card</Link> - Enrolment and updates</li>
+                        <li><Link to="/?search=pan">PAN Card</Link> - New applications and corrections</li>
+                        <li><Link to="/?search=passport">Passport</Link> - Fresh applications and renewals</li>
+                        <li><Link to="/?search=driving">Driving License</Link> - Learner's and permanent licenses</li>
+                        <li><Link to="/?search=voter">Voter ID</Link> - Registration and updates</li>
                         <li><Link to="/">View all services</Link></li>
                     </ul>
                 </section>
@@ -123,9 +123,9 @@ export function About() {
                     <div className="footer-links" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                         <Link to="/">Home</Link>
                         <Link to="/about">About Us</Link>
-                        <Link to="/?search=Aadhaar">Aadhaar</Link>
-                        <Link to="/?search=PAN">PAN Card</Link>
-                        <Link to="/?search=Passport">Passport</Link>
+                        <Link to="/?search=aadhaar">Aadhaar</Link>
+                        <Link to="/?search=pan">PAN Card</Link>
+                        <Link to="/?search=passport">Passport</Link>
                     </div>
                     <p>© 2024 BharatApply. Not affiliated with the Government of India.</p>
                 </div>
