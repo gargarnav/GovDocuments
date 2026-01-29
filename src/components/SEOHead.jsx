@@ -1,9 +1,22 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 export function SEOHead({ title, description, canonicalUrl, ogImage, type = 'website', schema }) {
+    const location = useLocation();
     const siteTitle = 'BharatApply';
+    const baseUrl = 'https://bharatapply.online';
     const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-    const fullUrl = canonicalUrl || 'https://bharatapply.online';
+    
+    // Generate canonical URL: use provided canonicalUrl, or generate from location
+    // Always use clean URL without query parameters to avoid duplicate content
+    let fullUrl;
+    if (canonicalUrl) {
+        fullUrl = canonicalUrl;
+    } else {
+        // Remove query parameters and hash from pathname for canonical URL
+        const cleanPath = location.pathname === '/' ? '' : location.pathname;
+        fullUrl = `${baseUrl}${cleanPath}`;
+    }
 
     return (
         <Helmet>

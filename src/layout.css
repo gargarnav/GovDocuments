@@ -260,6 +260,29 @@ body,
     /* Stick to bottom of content-wrapper */
 }
 
+.footer a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.footer a:hover {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: underline;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    font-size: 0.9rem;
+}
+
 /* Sidebar Navigation */
 .sidebar-header {
     padding: 0 1.5rem 1rem;

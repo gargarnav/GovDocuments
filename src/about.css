@@ -62,3 +62,34 @@
     /* Saffron */
     margin-bottom: 0.5rem;
 }
+
+.about-section a,
+.about-list a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.about-section a:hover,
+.about-list a:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--color-secondary);
+}
