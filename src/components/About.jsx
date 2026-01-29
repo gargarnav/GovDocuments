@@ -26,11 +26,9 @@ export function About() {
                 <section className="about-section">
                     <h2>Our Mission</h2>
                     <p>
-                        At BharatApply, our mission is to make Indian government documentation simple, clear, and accessible for everyone.
-
-                        Navigating bureaucracy can be overwhelming. Many citizens face unnecessary delays and rejections due to unclear document requirements, changing guidelines,
-                        and strict file upload rules (like "JPEG only, under 200KB"). We aim to reduce this confusion by providing accurate, structured information in one place—so users can prepare the correct documents and
-                        complete applications confidently.
+                        At BharatApply, our mission is to make government documentation simple and clear.
+                        The process can be confusing, and small errors cause delays and rejections.
+                        We reduce that confusion by giving accurate, structured information in one place so you can prepare the right documents with confidence.
                     </p>
                     <p>
                         Explore our <Link to="/">comprehensive service directory</Link> to find document requirements for <Link to="/?search=aadhaar">Aadhaar</Link>, <Link to="/?search=pan">PAN Card</Link>, <Link to="/?search=passport">Passport</Link>, and many other government services.
@@ -41,15 +39,15 @@ export function About() {
                 <section className="about-section">
                     <h2>What We Do</h2>
                     <p>
-                        We provide a citizen-friendly documentation guide for common Indian government services, including passport, Aadhaar, PAN, voter ID, driving license, certificates, and more.
+                        We provide a citizen‑friendly guide for common services like Passport, Aadhaar, PAN, Voter ID, Driving License, and certificates.
                         On BharatApply, you can find:
                     </p>
                     <ul className="about-list">
                         <li><strong>Complete Document Checklists:</strong> Know exactly what proofs are accepted for Identity, Address, and Date of Birth. Check our guides for <Link to="/?search=birth">Birth Certificate</Link>, <Link to="/?search=income">Income Certificate</Link>, and other essential documents.</li>
-                        <li><strong>File Upload Specifications:</strong> Detailed file size and format (JPEG/PDF) requirements for each portal to avoid upload errors.</li>
-                        <li><strong>Photo & Signature Guidelines:</strong> Specific dimensions and pixel resolutions required by NSDL, uidai, and Passport Seva.</li>
-                        <li><strong>Step-by-Step Guidance:</strong> (Coming Soon) Detailed walkthroughs for online application portals.</li>
-                        <li><strong>Tips & Tricks:</strong> Practical advice to help avoid common mistakes that lead to application rejection.</li>
+                        <li><strong>File Upload Specifications:</strong> Clear file size and format rules (JPEG/PDF) to avoid upload errors.</li>
+                        <li><strong>Photo & Signature Guidelines:</strong> Simple size and resolution requirements.</li>
+                        <li><strong>Step-by-Step Guidance:</strong> (Coming Soon) Easy walkthroughs for online portals.</li>
+                        <li><strong>Tips & Tricks:</strong> Practical advice to avoid common mistakes.</li>
                     </ul>
                     <p>
                         Browse our <Link to="/">complete list of services</Link> organized by categories including Identity Documents, Travel Documents, Certificates, Education, Banking & Tax, Vehicle & Transport, Police & Legal, and Health & Welfare.
@@ -76,20 +74,18 @@ export function About() {
                 <section className="about-section">
                     <h2>How BharatApply Helps You</h2>
                     <p>
-                        Our platform is designed to save you time and reduce the frustration often associated with government document applications.
-                        Instead of searching through multiple government websites and trying to decipher complex guidelines, BharatApply provides
-                        everything you need in one place. We've compiled information from official sources and organized it in an easy-to-understand format.
+                        Our platform saves time and reduces frustration.
+                        Instead of searching many sites and decoding complex rules, you get everything in one place.
+                        We compile information from official sources and keep it easy to understand.
                     </p>
                     <p>
-                        Each service guide includes a complete checklist of required documents, specific file format requirements, size limitations,
-                        and step-by-step instructions where applicable. We also provide tips based on common issues faced by applicants, helping you
-                        avoid mistakes that could delay your application. Our goal is to make the process as smooth as possible so you can complete
-                        your applications with confidence.
+                        Each guide includes a complete checklist, clear file formats, and size limits.
+                        We also share tips based on common issues so you can avoid delays.
+                        Our goal is to help you finish your applications with confidence.
                     </p>
                     <p>
-                        Whether you're applying for your first Aadhaar card, renewing your passport, updating your PAN details, or applying for
-                        any other government document, BharatApply is here to guide you through the process. We regularly update our information to
-                        reflect the latest guidelines and requirements from official government portals.
+                        Whether you are applying for Aadhaar, renewing a passport, or updating PAN details, BharatApply can guide you.
+                        We update our information to reflect the latest official guidelines.
                     </p>
                 </section>
 
@@ -97,15 +93,14 @@ export function About() {
                 <section className="about-section">
                     <h2>Your Privacy & Data Safety</h2>
                     <p>
-                        We understand that applying for government documents involves handling sensitive personal information.
-                        <strong>BharatApply is purely an informational guide</strong>. We do not collect, store, or process your personal data, biometric details,
-                        or financial information. Our platform serves as a bridge of knowledge, directing you to the official, secured government portals for all
-                        data submission and processing.
+                        Applying for government documents involves sensitive information.
+                        <strong>BharatApply is an informational guide</strong>. We do not collect, store, or process your personal data, biometrics, or financial information.
+                        We point you to official government portals for submission and processing.
                     </p>
                     <p>
-                        We strictly advise users never to share OTPs, passwords, or sensitive details with anyone claiming to represent our site.
-                        Always check the URL in your browser address bar to ensure you are on an official government website (ending in .gov.in or .nic.in)
-                        before entering any personal details. Our checklists are designed to help you prepare your offline documents safely before you even go online.
+                        Never share OTPs or passwords with anyone claiming to represent our site.
+                        Always check the URL and use official .gov.in or .nic.in websites before entering personal details.
+                        Our checklists help you prepare documents safely before you go online.
                     </p>
                 </section>
 

@@ -207,22 +207,19 @@ export function Home() {
                     <div className="content-container">
                         <h2>Complete Guide to Government Document Applications</h2>
                         <p style={{ marginBottom: '1.5rem', lineHeight: '1.7' }}>
-                            Applying for government documents in India requires careful preparation and understanding of the specific requirements for each service.
-                            Whether you're a first-time applicant or need to update existing documents, having the correct paperwork ready can save you time and prevent
-                            application rejections. Our comprehensive guides cover all major government services including identity documents, travel documents,
-                            certificates, and more.
+                            Applying for government documents in India takes preparation. Each service has its own rules.
+                            If you are applying for the first time or updating a document, having the right papers saves time and avoids rejections.
+                            Our guides cover identity cards, travel documents, certificates, and more.
                         </p>
                         <p style={{ marginBottom: '1.5rem', lineHeight: '1.7' }}>
-                            Each government portal has specific file format and size requirements that must be strictly followed. For example, passport applications
-                            require JPEG images under 200KB, while PAN card applications need photos sized at 3.5x2.5cm. Understanding these specifications before
-                            uploading can prevent common errors that lead to application delays. Our detailed checklists ensure you have everything ready before
-                            starting your online application.
+                            Government portals have strict file size and format rules. For example, a passport photo may need a JPEG under 200KB.
+                            PAN card photos often require a 3.5x2.5cm size. Knowing these rules before upload prevents delays.
+                            Our checklists help you prepare everything before you start.
                         </p>
                         <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Common Application Mistakes to Avoid</h3>
                         <p style={{ marginBottom: '1.5rem', lineHeight: '1.7' }}>
-                            Many applications are rejected due to simple mistakes that can be easily avoided. Common issues include mismatched names across documents,
-                            incorrect file formats, oversized images, and missing self-attestation. Our guides highlight these common pitfalls and provide solutions to
-                            ensure your application is processed smoothly. Always verify that your name, date of birth, and address match exactly across all submitted documents.
+                            Many applications fail due to small mistakes. Common issues include name mismatches, wrong file formats, large images, and missing self‑attestation.
+                            We list these problems and simple fixes so your application moves faster. Always match your name, date of birth, and address on every document.
                         </p>
                     </div>
                 </section>
@@ -234,27 +231,27 @@ export function Home() {
                         <div className="faq-grid" style={{ display: 'grid', gap: '1.5rem', marginTop: '1.5rem' }}>
                             <article>
                                 <h3>How do I apply for a PAN Card online?</h3>
-                                <p>To apply for a PAN card, visit the NSDL or UTIITSL website. You will need proof of identity (Aadhaar), proof of address, and a photograph. Our guide details the exact file sizes needed for upload.</p>
+                                <p>Visit the NSDL or UTIITSL website. You will need proof of identity (Aadhaar), proof of address, and a photo. Our guide lists the exact file sizes.</p>
                             </article>
                             <article>
                                 <h3>What documents are required for a new Passport?</h3>
-                                <p>For a fresh passport, you generally need proof of address (Aadhaar, Voter ID, etc.), proof of date of birth (Birth Certificate, 10th Marksheet), and possibly a non-ECR proof if eligible.</p>
+                                <p>You usually need proof of address, proof of date of birth, and sometimes a non‑ECR proof if eligible.</p>
                             </article>
                             <article>
                                 <h3>Is it mandatory to link Aadhaar with PAN?</h3>
-                                <p>Yes, as per CBDT guidelines, linking Aadhaar with PAN is mandatory to prevent your PAN from becoming inoperative. Ensure your demographic details match in both documents.</p>
+                                <p>Yes. Linking Aadhaar with PAN is required to keep the PAN active. Make sure your details match in both.</p>
                             </article>
                             <article>
                                 <h3>How can I update my Aadhaar details?</h3>
-                                <p>You can update your address online via the myAadhaar portal. For biometric or name changes, you must visit a permanent enrolment center. Check our specific service card for document lists.</p>
+                                <p>You can update your address online on the myAadhaar portal. For biometrics or name changes, visit an enrolment center.</p>
                             </article>
                             <article>
                                 <h3>What is the processing time for government documents?</h3>
-                                <p>Processing times vary by service. Aadhaar updates typically take 7-15 days, PAN card applications take 15-20 days, and passport applications can take 30-45 days depending on the type of application and verification required.</p>
+                                <p>Processing times vary. Aadhaar updates often take 7–15 days, PAN cards 15–20 days, and passports 30–45 days.</p>
                             </article>
                             <article>
                                 <h3>Can I track my application status online?</h3>
-                                <p>Yes, most government portals provide online tracking facilities. You can track your Aadhaar status using your enrolment number, PAN application using your acknowledgment number, and passport status using your file number on the respective official websites.</p>
+                                <p>Yes. Most portals provide tracking. Use your enrolment, acknowledgment, or file number on the official site.</p>
                             </article>
                         </div>
                     </div>
