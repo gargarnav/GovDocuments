@@ -51,8 +51,9 @@
   background: var(--color-surface);
   border: 2px solid var(--color-border);
   border-radius: 8px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.25rem;
   transition: all 0.3s ease;
+  gap: 0.75rem;
 }
 
 .search-wrapper:focus-within {
@@ -62,8 +63,9 @@
 
 .search-icon {
   color: var(--color-text-muted);
-  margin-right: 0.75rem;
   flex-shrink: 0;
+  width: 18px;
+  height: 18px;
 }
 
 .search-input {
@@ -71,9 +73,10 @@
   border: none;
   background: transparent;
   font-size: 1rem;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.5rem 0.5rem 0;
   outline: none;
   color: var(--color-text-main);
+  min-width: 0;
 }
 
 .search-input::placeholder {
@@ -466,4 +469,38 @@
   .guide-card-description {
     font-size: 0.9rem;
   }
+}
+
+/* Explicit Dark Mode Support */
+[data-theme='dark'] .guides-index {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+}
+
+[data-theme='dark'] .search-wrapper {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme='dark'] .search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+[data-theme='dark'] .guide-card {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme='dark'] .results-info {
+  background-color: var(--color-surface);
+}
+
+[data-theme='dark'] .no-results {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme='dark'] .guides-seo-content {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
 }

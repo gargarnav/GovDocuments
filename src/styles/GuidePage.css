@@ -520,3 +520,47 @@
     font-size: 0.85rem;
   }
 }
+
+/* Explicit Dark Mode Support */
+[data-theme='dark'] .guide-page {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+}
+
+[data-theme='dark'] .guide-content {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme='dark'] .btn-back {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme='dark'] .intro-text {
+  background-color: var(--color-background);
+  color: var(--color-text-muted);
+}
+
+[data-theme='dark'] .faq-section {
+  background-color: var(--color-background);
+  border-color: var(--color-border);
+}
+
+[data-theme='dark'] .disclaimer {
+  background-color: var(--color-background);
+  border-color: var(--color-border);
+}
+
+[data-theme='dark'] .callout {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+}
+
+[data-theme='dark'] .guide-table {
+  border-color: var(--color-border);
+}
+
+[data-theme='dark'] .guide-table tr:hover {
+  background-color: var(--color-background);
+}
