@@ -6,7 +6,7 @@ import { ServiceCard } from './components/ServiceCard';
 import { DocumentModal } from './components/DocumentModal';
 import { services, categories } from './data/services';
 
-import { DelayedAd } from './components/DelayedAd';
+
 import { SEOHead } from './components/SEOHead';
 import { SEOContent } from './components/SEOContent';
 import { Footer } from './components/Footer';
