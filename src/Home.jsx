@@ -151,7 +151,7 @@ export function Home() {
                     </div>
                 </Hero>
 
-                <DelayedAd style={{ margin: '0.5rem auto' }} />
+
 
 
                 <div className="content-container">
