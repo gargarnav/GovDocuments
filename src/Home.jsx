@@ -140,24 +140,20 @@ export function Home() {
                         {activeCategory ? activeCategory.title : 'All Services'}
                     </span>
                 </div>
-                <Hero searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+                <Hero searchTerm={searchTerm} onSearchChange={setSearchTerm}>
+                    <div className="quick-links">
+                        <Link to="/?search=aadhaar" onClick={() => { setSearchTerm('aadhaar'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Aadhaar Card</Link>
+                        <Link to="/?search=pan" onClick={() => { setSearchTerm('pan'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">PAN Card</Link>
+                        <Link to="/?search=passport" onClick={() => { setSearchTerm('passport'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Passport</Link>
+                        <Link to="/?search=driving" onClick={() => { setSearchTerm('driving'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Driving License</Link>
+                        <Link to="/?search=birth" onClick={() => { setSearchTerm('birth'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Birth Certificate</Link>
+                        <Link to="/?search=income" onClick={() => { setSearchTerm('income'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Income Certificate</Link>
+                    </div>
+                </Hero>
 
-                <DelayedAd />
+                <DelayedAd style={{ margin: '0.5rem auto' }} />
 
-                <div className="content-container">
-                    {/* Interior Linking Section for SEO */}
-                    <section className="popular-services">
-                        <h2>Popular Government Services</h2>
-                        <div className="quick-links">
-                            <Link to="/?search=aadhaar" onClick={() => { setSearchTerm('aadhaar'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Aadhaar Card</Link>
-                            <Link to="/?search=pan" onClick={() => { setSearchTerm('pan'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">PAN Card</Link>
-                            <Link to="/?search=passport" onClick={() => { setSearchTerm('passport'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Passport</Link>
-                            <Link to="/?search=driving" onClick={() => { setSearchTerm('driving'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Driving License</Link>
-                            <Link to="/?search=birth" onClick={() => { setSearchTerm('birth'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Birth Certificate</Link>
-                            <Link to="/?search=income" onClick={() => { setSearchTerm('income'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Income Certificate</Link>
-                        </div>
-                    </section>
-                </div>
+
                 <div className="content-container">
                     <section className="services-section">
                         <div className="section-header">

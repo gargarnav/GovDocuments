@@ -1,6 +1,6 @@
 import { Search } from 'lucide-react';
 
-export function Hero({ searchTerm, onSearchChange }) {
+export function Hero({ searchTerm, onSearchChange, children }) {
     return (
         <section className="hero">
             <div className="hero-content">
@@ -17,6 +17,7 @@ export function Hero({ searchTerm, onSearchChange }) {
                         onChange={(e) => onSearchChange(e.target.value)}
                     />
                 </div>
+                {children}
             </div>
         </section>
     );
