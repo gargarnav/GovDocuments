@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import { AdContainer } from './AdContainer';
+
 
 const icons = {
     UserCheck, Truck, Landmark, GraduationCap,
@@ -51,8 +51,7 @@ export function Sidebar({ categories, selectedCategory, onSelectCategory }) {
                 })}
             </nav>
 
-            {/* Minimal Ad Placeholder */}
-            <AdContainer format="sidebar-bottom" />
+
         </aside>
     );
 }

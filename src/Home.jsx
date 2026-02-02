@@ -5,7 +5,7 @@ import { Sidebar } from './components/Sidebar';
 import { ServiceCard } from './components/ServiceCard';
 import { DocumentModal } from './components/DocumentModal';
 import { services, categories } from './data/services';
-import { AdContainer } from './components/AdContainer';
+
 import { DelayedAd } from './components/DelayedAd';
 import { SEOHead } from './components/SEOHead';
 import { SEOContent } from './components/SEOContent';
@@ -177,7 +177,7 @@ export function Home() {
                             )}
                         </div>
 
-                        <AdContainer format="banner" />
+
                     </section>
                 </div>
 
