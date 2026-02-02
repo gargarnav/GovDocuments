@@ -9,7 +9,6 @@ import { Header } from './components/Header';
 import { Analytics as SiteAnalytics } from './components/Analytics';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 
-import { AdLoader } from './components/AdLoader';
 
 // Lazy loading components for performance
 
@@ -35,7 +34,6 @@ function App() {
   return (
     <Router>
       <SiteAnalytics />
-      <AdLoader />
       <div className="app-container">
         <Header />
 
