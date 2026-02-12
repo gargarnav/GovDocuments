@@ -105,12 +105,9 @@ export function ServicePage() {
                             {section.subsections && section.subsections.map((sub, idx) => (
                                 <div key={idx} className="subsection">
                                     <h3>{sub.subHeading}</h3>
-                                    <ul>
+                                    <ul className="sub-list">
                                         {sub.list.map((item, i) => (
-                                            <li key={i}>
-                                                <CheckCircle size={16} className="list-icon" />
-                                                {item}
-                                            </li>
+                                            <li key={i}>{item}</li>
                                         ))}
                                     </ul>
                                 </div>

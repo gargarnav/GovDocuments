@@ -34,9 +34,14 @@ const Loading = () => (
   </div>
 );
 
+import ScrollToTop from './components/ScrollToTop';
+
+// ... (existing imports)
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <SiteAnalytics />
       <div className="app-container">
         <Header />
