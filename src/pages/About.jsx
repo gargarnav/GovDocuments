@@ -1,6 +1,6 @@
-import { SEOHead } from './SEOHead';
-import { Footer } from './Footer';
-import { DelayedAd } from './DelayedAd';
+import { SEOHead } from '../components/SEOHead';
+import { Footer } from '../components/Footer';
+import { DelayedAd } from '../components/DelayedAd';
 import { Link } from 'react-router-dom';
 import { organizationSchema, articleSchema } from '../utils/seoSchemas';
 import { pageMetadata, lastUpdatedDate } from '../utils/pageMetadata';
