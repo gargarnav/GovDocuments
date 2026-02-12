@@ -20,6 +20,7 @@ export const services = [
     // --- IDENTITY ---
     {
         id: 'aadhaar-new',
+        slug: 'aadhaar-card',
         categoryId: 'identity',
         title: 'Aadhaar Enrolment (New)',
         description: 'Apply for a new 12-digit unique identity number.',
@@ -33,6 +34,7 @@ export const services = [
     },
     {
         id: 'aadhaar-update',
+        slug: 'aadhaar-card',
         categoryId: 'identity',
         title: 'Aadhaar Update',
         description: 'Update Name, DOB, Address, Photo, Mobile, or Email.',
@@ -44,6 +46,7 @@ export const services = [
     },
     {
         id: 'pan-new',
+        slug: 'pan-card',
         categoryId: 'identity',
         title: 'New PAN Card',
         description: 'Permanent Account Number application (Form 49A).',
@@ -57,6 +60,7 @@ export const services = [
     },
     {
         id: 'voter-new',
+        slug: 'voter-id',
         categoryId: 'identity',
         title: 'New Voter ID',
         description: 'Register as a new voter (Form 6).',
@@ -72,6 +76,7 @@ export const services = [
     // --- TRAVEL ---
     {
         id: 'passport-fresh',
+        slug: 'passport',
         categoryId: 'travel',
         title: 'Fresh Passport',
         description: 'Apply for a new Indian Passport.',
@@ -85,6 +90,7 @@ export const services = [
     },
     {
         id: 'passport-reissue',
+        slug: 'passport',
         categoryId: 'travel',
         title: 'Re-issue Passport',
         description: 'Renewal, damaged, or lost passport.',
@@ -100,6 +106,7 @@ export const services = [
     // --- CERTIFICATES ---
     {
         id: 'birth-cert',
+        slug: 'birth-certificate',
         categoryId: 'certificates',
         title: 'Birth Certificate',
         description: 'Application for birth registration.',
@@ -113,6 +120,7 @@ export const services = [
     },
     {
         id: 'income-cert',
+        slug: 'income-certificate',
         categoryId: 'certificates',
         title: 'Income Certificate',
         description: 'Proof of annual family income.',
@@ -127,6 +135,7 @@ export const services = [
     },
     {
         id: 'caste-cert',
+        slug: 'caste-certificate',
         categoryId: 'certificates',
         title: 'Caste Certificate (SC/ST/OBC)',
         description: 'Proof of caste/community.',
@@ -136,6 +145,20 @@ export const services = [
             { type: 'Residence Proof', options: ['Ration Card', 'Voter ID'] },
             { type: 'Caste Proof', description: 'Caste certificate of father/blood relative', options: ['Father\'s Certificate', 'School Leaving Cert mentioning caste'] },
             { type: 'Income Proof', description: 'For OBC Non-Creamy Layer' }
+        ],
+        fileSpecs: { docs: { format: 'PDF', size: '<2MB' } }
+    },
+    {
+        id: 'domicile-cert',
+        slug: 'domicile-certificate',
+        categoryId: 'certificates',
+        title: 'Domicile Certificate',
+        description: 'Proof of residence for quota/jobs.',
+        iconName: 'FileBadge',
+        requirements: [
+            { type: 'Identity Proof', options: ['Aadhaar', 'Voter ID'] },
+            { type: 'Proof of Residence', options: ['10+ years schooling', 'Electricity Bill'] },
+            { type: 'Land Records', description: 'Khasra/Khatauni (if applicable)' }
         ],
         fileSpecs: { docs: { format: 'PDF', size: '<2MB' } }
     },
@@ -216,6 +239,7 @@ export const services = [
     // --- TRANSPORT ---
     {
         id: 'driving-license',
+        slug: 'driving-licence',
         categoryId: 'transport',
         title: 'Driving License',
         description: 'Learner\'s or Permanent License.',
@@ -288,6 +312,7 @@ export const services = [
     },
     {
         id: 'ration-card',
+        slug: 'ration-card',
         categoryId: 'health',
         title: 'Ration Card',
         description: 'New card or member addition.',

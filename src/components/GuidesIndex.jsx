@@ -6,7 +6,7 @@ import { SEOHead } from './SEOHead';
 import { Footer } from './Footer';
 import { breadcrumbSchema as createBreadcrumbSchema } from '../utils/seoSchemas';
 import '../styles/GuidesIndex.css';
-
+import { DelayedAd } from './DelayedAd';
 
 const CATEGORY_DISPLAY = {
   travel: { label: 'Travel & Passport', icon: '✈️' },
@@ -101,7 +101,7 @@ export default function GuidesIndex() {
             </div>
           </div>
 
-
+          <DelayedAd />
 
           {/* Results Count */}
           <div className="results-info">

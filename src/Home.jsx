@@ -5,8 +5,9 @@ import { Sidebar } from './components/Sidebar';
 import { ServiceCard } from './components/ServiceCard';
 import { DocumentModal } from './components/DocumentModal';
 import { services, categories } from './data/services';
-
-
+import { guidePages } from './data/guidePages';
+import { AdContainer } from './components/AdContainer';
+import { DelayedAd } from './components/DelayedAd';
 import { SEOHead } from './components/SEOHead';
 import { SEOContent } from './components/SEOContent';
 import { Footer } from './components/Footer';
@@ -142,16 +143,16 @@ export function Home() {
                 </div>
                 <Hero searchTerm={searchTerm} onSearchChange={setSearchTerm}>
                     <div className="quick-links">
-                        <Link to="/?search=aadhaar" onClick={() => { setSearchTerm('aadhaar'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Aadhaar Card</Link>
-                        <Link to="/?search=pan" onClick={() => { setSearchTerm('pan'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">PAN Card</Link>
-                        <Link to="/?search=passport" onClick={() => { setSearchTerm('passport'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Passport</Link>
-                        <Link to="/?search=driving" onClick={() => { setSearchTerm('driving'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Driving License</Link>
-                        <Link to="/?search=birth" onClick={() => { setSearchTerm('birth'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Birth Certificate</Link>
-                        <Link to="/?search=income" onClick={() => { setSearchTerm('income'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="link-chip">Income Certificate</Link>
+                        <Link to="/aadhaar-card" className="link-chip">Aadhaar Card</Link>
+                        <Link to="/pan-card" className="link-chip">PAN Card</Link>
+                        <Link to="/passport" className="link-chip">Passport</Link>
+                        <Link to="/driving-licence" className="link-chip">Driving License</Link>
+                        <Link to="/birth-certificate" className="link-chip">Birth Certificate</Link>
+                        <Link to="/income-certificate" className="link-chip">Income Certificate</Link>
                     </div>
                 </Hero>
 
-
+                <DelayedAd style={{ margin: '0.5rem auto' }} />
 
 
                 <div className="content-container">
@@ -177,7 +178,7 @@ export function Home() {
                             )}
                         </div>
 
-
+                        <AdContainer format="banner" />
                     </section>
                 </div>
 
@@ -219,6 +220,16 @@ export function Home() {
                         >
                             Browse All Guides →
                         </Link>
+
+                        <div className="recent-guides-preview" style={{ marginTop: '3rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+                            {guidePages.slice(0, 3).map(guide => (
+                                <Link key={guide.slug} to={`/guides/${guide.slug}`} className="guide-card-preview" style={{ textDecoration: 'none', color: 'inherit', background: '#fff', padding: '1.5rem', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                                    <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#1e293b' }}>{guide.h1}</h4>
+                                    <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: '1.5' }}>{guide.description.substring(0, 100)}...</p>
+                                    <span style={{ display: 'inline-block', marginTop: '1rem', color: '#2563eb', fontSize: '0.9rem', fontWeight: '500' }}>Read Guide →</span>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </section>
 

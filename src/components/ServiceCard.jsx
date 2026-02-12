@@ -14,8 +14,8 @@ const icons = {
 
 export function ServiceCard({ service, onClick }) {
     const Icon = icons[service.iconName] || HelpCircle;
-    // Create SEO-friendly URL with service ID for crawlers
-    const serviceUrl = `/?service=${service.id}`;
+    // Use static slug if available (for core SEO pages), else fallback to query param
+    const serviceUrl = service.slug ? `/${service.slug}` : `/?service=${service.id}`;
 
     const handleClick = () => {
         // Allow navigation to happen so URL updates

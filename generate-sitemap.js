@@ -19,21 +19,22 @@ const { guidePages } = guidesModule;
 const generateServicesSitemap = () => {
   const baseUrl = 'https://bharatapply.online';
   const today = new Date().toISOString().split('T')[0];
-  
+
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-  
+
   services.forEach(service => {
     xml += `  <url>\n`;
-    xml += `    <loc>${baseUrl}/?service=${encodeURIComponent(service.id)}</loc>\n`;
+    const url = service.slug ? `${baseUrl}/${service.slug}` : `${baseUrl}/?service=${encodeURIComponent(service.id)}`;
+    xml += `    <loc>${url}</loc>\n`;
     xml += `    <lastmod>${today}</lastmod>\n`;
     xml += `    <changefreq>monthly</changefreq>\n`;
     xml += `    <priority>0.7</priority>\n`;
     xml += `  </url>\n`;
   });
-  
+
   xml += '</urlset>';
-  
+
   const sitemapPath = path.join(__dirname, 'public', 'sitemap-services.xml');
   fs.writeFileSync(sitemapPath, xml);
   console.log(`✓ Generated ${services.length} service URLs in sitemap-services.xml`);
@@ -42,10 +43,10 @@ const generateServicesSitemap = () => {
 const generateGuidesSitemap = () => {
   const baseUrl = 'https://bharatapply.online';
   const today = new Date().toISOString().split('T')[0];
-  
+
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-  
+
   // Add main guides index page
   xml += `  <url>\n`;
   xml += `    <loc>${baseUrl}/guides</loc>\n`;
@@ -53,7 +54,7 @@ const generateGuidesSitemap = () => {
   xml += `    <changefreq>weekly</changefreq>\n`;
   xml += `    <priority>0.8</priority>\n`;
   xml += `  </url>\n`;
-  
+
   // Add individual guide pages
   guidePages.forEach(guide => {
     xml += `  <url>\n`;
@@ -63,9 +64,9 @@ const generateGuidesSitemap = () => {
     xml += `    <priority>0.7</priority>\n`;
     xml += `  </url>\n`;
   });
-  
+
   xml += '</urlset>';
-  
+
   const sitemapPath = path.join(__dirname, 'public', 'sitemap-guides.xml');
   fs.writeFileSync(sitemapPath, xml);
   console.log(`✓ Generated ${guidePages.length + 1} guide URLs in sitemap-guides.xml`);

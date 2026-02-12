@@ -10,11 +10,15 @@ export function Footer() {
                 <div className="footer-links">
                     <Link to="/">Home</Link>
                     <Link to="/about">About</Link>
-                    <Link to="/?search=aadhaar">Aadhaar</Link>
-                    <Link to="/?search=pan">PAN Card</Link>
-                    <Link to="/?search=passport">Passport</Link>
-                    <Link to="/?search=driving">Driving License</Link>
-                    <Link to="/?search=voter">Voter ID</Link>
+                    <Link to="/contact">Contact</Link>
+                    <Link to="/privacy-policy">Privacy Policy</Link>
+                    <Link to="/disclaimer">Disclaimer</Link>
+                    <div className="footer-separator"></div>
+                    <Link to="/aadhaar-card">Aadhaar</Link>
+                    <Link to="/pan-card">PAN Card</Link>
+                    <Link to="/passport">Passport</Link>
+                    <Link to="/driving-licence">Driving License</Link>
+                    <Link to="/voter-id">Voter ID</Link>
                 </div>
 
                 {/* Social Links */}

@@ -1,6 +1,6 @@
 import { SEOHead } from './SEOHead';
 import { Footer } from './Footer';
-
+import { DelayedAd } from './DelayedAd';
 import { Link } from 'react-router-dom';
 import { organizationSchema, articleSchema } from '../utils/seoSchemas';
 import { pageMetadata, lastUpdatedDate } from '../utils/pageMetadata';
@@ -34,7 +34,7 @@ export function About() {
                         We reduce that confusion by giving accurate, structured information in one place so you can prepare the right documents with confidence.
                     </p>
                     <p>
-                        Explore our <Link to="/">comprehensive service directory</Link> to find document requirements for <Link to="/?search=aadhaar">Aadhaar</Link>, <Link to="/?search=pan">PAN Card</Link>, <Link to="/?search=passport">Passport</Link>, and many other government services.
+                        Explore our <Link to="/">comprehensive service directory</Link> to find document requirements for <Link to="/aadhaar-card">Aadhaar</Link>, <Link to="/pan-card">PAN Card</Link>, <Link to="/passport">Passport</Link>, and many other government services.
                     </p>
                 </section>
 
@@ -46,7 +46,7 @@ export function About() {
                         On BharatApply, you can find:
                     </p>
                     <ul className="about-list">
-                        <li><strong>Complete Document Checklists:</strong> Know exactly what proofs are accepted for Identity, Address, and Date of Birth. Check our guides for <Link to="/?search=birth">Birth Certificate</Link>, <Link to="/?search=income">Income Certificate</Link>, and other essential documents.</li>
+                        <li><strong>Complete Document Checklists:</strong> Know exactly what proofs are accepted for Identity, Address, and Date of Birth. Check our guides for <Link to="/birth-certificate">Birth Certificate</Link>, <Link to="/income-certificate">Income Certificate</Link>, and other essential documents.</li>
                         <li><strong>File Upload Specifications:</strong> Clear file size and format rules (JPEG/PDF) to avoid upload errors.</li>
                         <li><strong>Photo & Signature Guidelines:</strong> Simple size and resolution requirements.</li>
                         <li><strong>Step-by-Step Guidance:</strong> (Coming Soon) Easy walkthroughs for online portals.</li>
@@ -64,11 +64,11 @@ export function About() {
                         Get started with our most frequently accessed services:
                     </p>
                     <ul className="about-list">
-                        <li><Link to="/?search=aadhaar">Aadhaar Card</Link> - Enrolment and updates</li>
-                        <li><Link to="/?search=pan">PAN Card</Link> - New applications and corrections</li>
-                        <li><Link to="/?search=passport">Passport</Link> - Fresh applications and renewals</li>
-                        <li><Link to="/?search=driving">Driving License</Link> - Learner's and permanent licenses</li>
-                        <li><Link to="/?search=voter">Voter ID</Link> - Registration and updates</li>
+                        <li><Link to="/aadhaar-card">Aadhaar Card</Link> - Enrolment and updates</li>
+                        <li><Link to="/pan-card">PAN Card</Link> - New applications and corrections</li>
+                        <li><Link to="/passport">Passport</Link> - Fresh applications and renewals</li>
+                        <li><Link to="/driving-licence">Driving License</Link> - Learner's and permanent licenses</li>
+                        <li><Link to="/voter-id">Voter ID</Link> - Registration and updates</li>
                         <li><Link to="/">View all services</Link></li>
                     </ul>
                 </section>
@@ -115,7 +115,7 @@ export function About() {
                         While we strive for accuracy, official rules may change. Please always verify with the respective official government portals like <a href="https://uidai.gov.in" target="_blank" rel="nofollow">uidai.gov.in</a>, <a href="https://passportindia.gov.in" target="_blank" rel="nofollow">passportindia.gov.in</a>, or <a href="https://incometax.gov.in" target="_blank" rel="nofollow">incometax.gov.in</a>.
                     </p>
                 </section>
-
+                <DelayedAd />
             </div>
             <Footer />
         </div >

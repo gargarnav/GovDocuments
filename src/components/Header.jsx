@@ -20,9 +20,9 @@ export function Header() {
 
                 <nav className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
                     <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-                    <Link to="/" className="nav-link">Services</Link>
                     <Link to="/guides" className={`nav-link ${location.pathname.startsWith('/guides') ? 'active' : ''}`}>Guides</Link>
                     <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link>
+                    <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
                     <ThemeToggle />
                 </nav>
             </div>
