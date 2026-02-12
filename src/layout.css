@@ -333,7 +333,19 @@ body,
     font-weight: 600;
 }
 
-.theme-private .nav-item.active {
-    background-color: rgba(21, 71, 52, 0.1);
-    /* Green tint */
+/* Static Page Layout (About, Contact, Privacy, Disclaimer) */
+.static-page-layout {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background);
+    -webkit-overflow-scrolling: touch;
+}
+
+.static-page-layout .footer {
+    margin-top: auto;
 }

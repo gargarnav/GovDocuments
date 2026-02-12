@@ -5,6 +5,7 @@ import serviceContent from '../data/serviceContent';
 import { SEOHead } from './SEOHead';
 import { DelayedAd } from './DelayedAd';
 import { AdContainer } from './AdContainer';
+import { Footer } from './Footer';
 import '../styles/GuidesIndex.css';
 
 export function ServicePage() {
@@ -159,6 +160,7 @@ export function ServicePage() {
                     </div>
                 </article>
             </div>
+            <Footer />
         </div>
     );
 }
