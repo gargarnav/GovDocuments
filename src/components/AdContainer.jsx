@@ -25,7 +25,7 @@ export function AdContainer({ format = 'auto', style, slot = '1234567890' }) {
         }}>
             <ins className="adsbygoogle"
                 style={{ display: 'block', width: '100%' }}
-                data-ad-client="ca-pub-0000000000000000" // Replace with actual Client ID
+                data-ad-client="ca-pub-8431329527460254"
                 data-ad-slot={slot}
                 data-ad-format={format}
                 data-full-width-responsive="true"></ins>
