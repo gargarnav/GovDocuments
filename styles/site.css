@@ -1,5 +1,37 @@
 /* Custom additions for the Next.js version of BharatApply */
 
+/* Numbered "Step-by-Step Process" list used on service guide pages */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.step-number {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--color-primary, #003366);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.step-item p {
+  margin: 0;
+  padding-top: 0.3rem;
+  line-height: 1.6;
+  color: var(--color-text, #1e293b);
+}
+
 .text-link {
   color: var(--color-primary, #2563eb);
   font-weight: 500;
