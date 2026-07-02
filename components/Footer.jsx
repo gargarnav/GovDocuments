@@ -9,11 +9,15 @@ export function Footer() {
         {/* Main Footer Links */}
         <div className="footer-links">
           <Link href="/">Home</Link>
+          <Link href="/guides">Guides</Link>
+          <Link href="/document-finder">Document Finder</Link>
+          <Link href="/id-proof-comparison">ID Proof Comparison</Link>
+          <Link href="/updates">Recently Updated</Link>
+          <Link href="/editorial-process">Editorial Process</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
           <Link href="/privacy-policy">Privacy Policy</Link>
           <Link href="/disclaimer">Disclaimer</Link>
-          <Link href="/guides">Guides</Link>
           <div className="footer-separator"></div>
           <Link href="/aadhaar-card">Aadhaar</Link>
           <Link href="/pan-card">PAN Card</Link>

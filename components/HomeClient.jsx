@@ -106,6 +106,35 @@ export function HomeClient() {
           </section>
         </div>
 
+        <section className="content-container">
+          <div
+            className="recent-guides-preview"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "1.5rem",
+              margin: "2rem 0",
+            }}
+          >
+            <Link href="/document-finder" className="guide-card-preview">
+              <h3>Document Proof Finder</h3>
+              <p>
+                Tick the documents you already have and instantly see which
+                services you are ready to apply for.
+              </p>
+              <span className="guide-preview-cta">Try the tool &rarr;</span>
+            </Link>
+            <Link href="/id-proof-comparison" className="guide-card-preview">
+              <h3>Aadhaar vs PAN vs Voter ID vs DL</h3>
+              <p>
+                A side-by-side comparison of which document works as identity,
+                address, and date of birth proof.
+              </p>
+              <span className="guide-preview-cta">Compare now &rarr;</span>
+            </Link>
+          </div>
+        </section>
+
         <SEOContent />
 
         <section className="additional-content-section">

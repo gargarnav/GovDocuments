@@ -39,9 +39,13 @@ This was done specifically to satisfy Google AdSense and to improve SEO.
 app/                     App Router routes
   layout.jsx             Root layout: metadata, GA + AdSense scripts, theme, Header
   page.jsx               Home (server) -> renders HomeClient
-  [serviceId]/page.jsx   Service guide pages (SSG, 10 pages)
+  [serviceId]/page.jsx   Service guide pages (SSG, 19 pages)
   guides/page.jsx        Guides index
   guides/[slug]/page.jsx Long-tail guide pages (SSG, 18 pages)
+  document-finder/       Document Proof Finder tool
+  id-proof-comparison/   Aadhaar vs PAN vs Voter ID vs DL comparison page
+  updates/               Recently Updated log (pulls dateModified from data)
+  editorial-process/     Editorial process & sources (E-E-A-T page)
   about/ contact/ privacy-policy/ disclaimer/   Static pages
   sitemap.js             Dynamic sitemap.xml (all routes)
   robots.js              robots.txt
@@ -49,14 +53,17 @@ app/                     App Router routes
 components/              React components (Header, Footer, HomeClient, etc.)
 context/ThemeContext.jsx Light/dark theme (client)
 data/                    Content data (services, serviceContent, guidePages)
-lib/                     seoSchemas, pageMetadata, internal-link helpers
+lib/                     seoSchemas, pageMetadata, links, proofFinder
 styles/                  All CSS (imported once in the root layout)
 public/                  favicon.svg, og-image.svg, ads.txt
 ```
 
 Content is data-driven. To add or edit a guide, edit the objects in
 `data/serviceContent.js` (full service pages) or `data/guidePages.js` (long-tail
-guides). Static params and the sitemap update automatically from that data.
+guides). Static params, the sitemap, and the Recently Updated page all update
+automatically from that data. Every service in `data/services.js` now has a
+`slug` and a matching full-page entry in `serviceContent.js`; there is no
+modal-only fallback left.
 
 ---
 
@@ -81,15 +88,26 @@ on screens without publisher content." The root causes and fixes:
 | --- | --- |
 | Client-rendered SPA: every URL served an empty `<div id="root">` to crawlers | Next.js static generation: every URL ships full HTML (service pages carry 2,000+ words) |
 | Ad units used a fake slot id (`1234567890`) and rendered empty dashed placeholder boxes | All ad units removed. Only the AdSense loader script remains for verification |
-| Only 10 of 21 services had real pages; others were noindex query-param modals | Home shows all services; the 10 full pages are real static URLs. Query-param routes removed |
-| Thin trust signals | Editorial byline, "checked against official portals", updated dates, stronger About/Privacy/Disclaimer |
-| No genuine utility | Interactive, printable, persistent "Documents to Prepare" checklist on every guide, plus related-guide cross-linking |
+| Only 10 of 21 services had real pages; the other 11 were modal-only, non-indexable | All 21 services (19 unique slugs) now have full static pages with checklists, FAQs, fees, and sources |
+| Thin trust signals | Editorial byline, "checked against official portals", real per-page last-updated dates, an Editorial Process page, and a Recently Updated log |
+| No genuine utility | Printable "Documents to Prepare" checklist on every guide, a Document Proof Finder tool, and an ID-proof comparison page |
 
 ### Value features added
 - **Document checklist tool:** tick off documents as you gather them; progress is
   saved per device and the list is print friendly.
-- **Editorial byline + last-updated date** on every guide (E-E-A-T).
-- **Related guides / other services** cross-linking blocks.
+- **Document Proof Finder** (`/document-finder`): select the documents you
+  already hold and see which of the 19 services you are ready to apply for,
+  matched against each service's actual requirement options in `data/services.js`.
+- **ID Proof Comparison** (`/id-proof-comparison`): Aadhaar vs PAN vs Voter ID vs
+  Driving License vs Passport, compared as identity/address/DOB/travel proof.
+- **Editorial byline + real last-updated date** on every guide (E-E-A-T), sourced
+  from `dateModified` on each data entry, not the build timestamp.
+- **Editorial Process & Sources page** (`/editorial-process`): explains the
+  research/review method and lists the official portal used per category.
+- **Recently Updated page** (`/updates`): every service and guide sorted by
+  `dateModified`, a freshness signal and internal-linking hub.
+- **Related guides / other services** cross-linking blocks, plus visible
+  breadcrumb navigation on service and guide pages (previously schema-only).
 - **Working contact form** that opens the user's mail client (no fake backend).
 
 ---
