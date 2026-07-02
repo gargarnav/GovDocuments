@@ -1,0 +1,221 @@
+/* Custom additions for the Next.js version of BharatApply */
+
+.text-link {
+  color: var(--color-primary, #2563eb);
+  font-weight: 500;
+  text-decoration: underline;
+}
+.text-link:hover {
+  color: var(--color-primary-dark, #1d4ed8);
+}
+
+/* Editorial trust byline shown on guide pages */
+.editorial-byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #64748b);
+  border: 1px solid var(--color-border, #e2e8f0);
+  background: var(--color-surface-alt, #f8fafc);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.editorial-byline .byline-dot {
+  opacity: 0.5;
+}
+.editorial-byline strong {
+  color: var(--color-text, #1e293b);
+}
+
+/* Related-guides / cross-link chips */
+.related-links-block {
+  margin: 2.5rem 0 1rem;
+}
+.related-links-block h2 {
+  margin-bottom: 1rem;
+}
+.related-chip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.75rem;
+}
+.related-chip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 10px;
+  background: var(--color-surface, #ffffff);
+  color: var(--color-text, #1e293b);
+  text-decoration: none;
+  font-weight: 500;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.related-chip:hover {
+  border-color: var(--color-primary, #2563eb);
+  transform: translateY(-1px);
+}
+.related-chip .arrow {
+  color: var(--color-primary, #2563eb);
+}
+
+/* Document checklist helper (interactive) */
+.checklist-tool {
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 14px;
+  background: var(--color-surface, #ffffff);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+.checklist-tool h2,
+.checklist-tool h3 {
+  margin-top: 0;
+}
+.checklist-progress {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-border, #e2e8f0);
+  overflow: hidden;
+  margin: 0.75rem 0 1.25rem;
+}
+.checklist-progress > span {
+  display: block;
+  height: 100%;
+  background: var(--color-secondary, #16a34a);
+  transition: width 0.25s ease;
+}
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--color-border, #e2e8f0);
+  cursor: pointer;
+  line-height: 1.5;
+}
+.checklist-item:last-child {
+  border-bottom: none;
+}
+.checklist-item input {
+  margin-top: 0.25rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--color-secondary, #16a34a);
+  flex-shrink: 0;
+}
+.checklist-item.done label {
+  text-decoration: line-through;
+  color: var(--color-text-muted, #94a3b8);
+}
+.checklist-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.checklist-btn {
+  border: 1px solid var(--color-border, #e2e8f0);
+  background: var(--color-surface-alt, #f8fafc);
+  color: var(--color-text, #1e293b);
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.checklist-btn:hover {
+  border-color: var(--color-primary, #2563eb);
+}
+
+/* Visible breadcrumb navigation */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #64748b);
+  margin: 1rem 0;
+}
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.breadcrumb-item a {
+  color: var(--color-text-muted, #64748b);
+  text-decoration: none;
+}
+.breadcrumb-item a:hover {
+  color: var(--color-primary, #2563eb);
+  text-decoration: underline;
+}
+.breadcrumb-item [aria-current="page"] {
+  color: var(--color-text, #1e293b);
+  font-weight: 500;
+}
+.breadcrumb-sep {
+  opacity: 0.5;
+}
+
+/* Guide preview cards on the home page (was inline-styled before) */
+.guide-card-preview {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-surface, #ffffff);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #e2e8f0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.15s, transform 0.15s;
+}
+.guide-card-preview:hover {
+  border-color: var(--color-primary, #2563eb);
+  transform: translateY(-2px);
+}
+.guide-card-preview h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: var(--color-text, #1e293b);
+}
+.guide-card-preview p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #64748b);
+  line-height: 1.5;
+  margin: 0;
+}
+.guide-preview-cta {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-primary, #2563eb);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Print-friendly: hide chrome and show only the article */
+@media print {
+  .header,
+  .footer,
+  .sidebar,
+  .breadcrumb,
+  .checklist-actions,
+  .related-links-block,
+  .mobile-category-bar,
+  .theme-toggle-btn {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+  .content-container,
+  .guide-content-wrapper {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}

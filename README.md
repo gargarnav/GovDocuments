@@ -24,10 +24,14 @@ Many citizens face unnecessary delays and rejections due to unclear document req
 *   **Citizen-Centric Design:** Clean, professional interface with a responsive dashboard layout.
 
 ## 🛠️ Tech Stack
-*   **Frontend:** React.js + Vite
+*   **Framework:** Next.js 15 (App Router, static generation)
+*   **UI:** React 19
 *   **Styling:** Vanilla CSS (CSS Variables, Flexbox/Grid)
-*   **Routing:** React Router DOM
 *   **Icons:** Lucide React
+
+Every page is prerendered to static HTML so search engines and AdSense see the
+full content at each URL. See [PROJECT_DOCS.md](./PROJECT_DOCS.md) for the full
+architecture and AdSense notes.
 
 ## 🏃‍♂️ How to Run
 
@@ -47,7 +51,8 @@ Many citizens face unnecessary delays and rejections due to unclear document req
     npm run dev
     ```
 
-4.  Open `http://localhost:5173` in your browser.
+4.  Open `http://localhost:3000` in your browser. Run `npm run build` to produce
+    the static production build.
 
 ## 📝 Disclaimer
 **BharatApply** is an independent informational platform and is **not affiliated with the Government of India**. While we strive for accuracy, official rules may change. User discretion is advised.
