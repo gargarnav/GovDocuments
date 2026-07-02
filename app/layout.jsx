@@ -66,7 +66,7 @@ const themeInitScript = `(function(){try{var t=localStorage.getItem('theme');if(
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
