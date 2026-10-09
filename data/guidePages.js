@@ -70,11 +70,11 @@ export const guidePages = [
 
   {
     slug: 'passport-photo-size-requirements-india',
-    title: 'Passport Photo Size Requirements India | Specifications',
-    description: 'Exact passport photo dimensions, resolution, and specifications for Indian passport applications. Avoid rejections with correct measurements.',
+    title: 'Passport Photo Size in India: cm, mm, Pixels and KB | BharatApply',
+    description: 'Exact Indian passport photo size: 3.5 x 4.5 cm, in mm, pixels, inches, DPI, and max KB. Full specifications to avoid rejection.',
     h1: 'Passport Photo Size Requirements in India: Complete Specifications',
     category: 'travel',
-    keywords: 'passport photo size india, passport photo dimensions, passport photo specifications',
+    keywords: 'passport photo size india, passport size photo dimensions in cm, passport photo size in pixels, passport photo size in inches, indian passport photo size in mm',
     datePublished: '2026-01-29',
     dateModified: '2026-01-29',
     intro: 'Incorrect passport photo dimensions are a leading cause of application rejection. This guide provides exact specifications for Indian passport photos.',
@@ -82,6 +82,8 @@ export const guidePages = [
     fileSpecs: {
       photos: {
         size: '3.5 cm × 4.5 cm (35mm × 45mm)',
+        sizeInInches: '1.38 in × 1.77 in',
+        sizeInPixels: 'Approx. 413 × 531 px at 300 DPI (350 × 450 px minimum)',
         resolution: 'Minimum 350 DPI',
         format: 'JPEG or PNG',
         fileSize: 'Max 300KB per photo',
@@ -168,14 +170,14 @@ export const guidePages = [
   // Aadhaar Guides
   {
     slug: 'aadhaar-address-change-documents-required',
-    title: 'Aadhaar Address Change | Documents Required',
+    title: 'Documents Required for Aadhaar Address Change | BharatApply',
     description: 'Complete list of documents needed to change address on Aadhaar card. Learn proof requirements and online/offline update process.',
     h1: 'Aadhaar Address Change: Required Documents & Proof',
     category: 'identity',
     keywords: 'aadhaar address change documents, aadhaar address update proof, aadhaar new address',
     datePublished: '2026-01-29',
     dateModified: '2026-01-29',
-    intro: 'Changing your address on Aadhaar is essential for updated identification. This guide lists all required documents for address update.',
+    intro: 'To change your address on Aadhaar you need one valid proof of address, such as a bank passbook, electricity or water bill, rent agreement, passport, or voter ID. You can update it online on the myAadhaar portal or at an enrolment centre. This guide lists every accepted address proof and the exact steps so your update is not rejected.',
     requiredDocuments: [
       { type: 'Proof of Address', description: 'Any one:', options: ['Utility Bill (electricity, water, gas)', 'Telephone Bill', 'Bank Statement', 'Rental Agreement', 'Property Tax Receipt'] },
       { type: 'Proof of Identity', description: 'Optional (if provided)', options: ['Passport', 'Voter ID', 'Driving License', 'Pan Card'] }
@@ -196,11 +198,11 @@ export const guidePages = [
 
   {
     slug: 'aadhaar-photo-size-requirements-update',
-    title: 'Aadhaar Photo Size Requirements | Update Specifications',
-    description: 'Aadhaar photo size, dimensions, resolution specifications for online updates and enrollment. Exact requirements to avoid rejection.',
+    title: 'Aadhaar Photo Size: Pixels, cm and KB Requirements | BharatApply',
+    description: 'Exact Aadhaar photo size in pixels (200 x 240), file size in KB, format, and DPI for myAadhaar updates and enrolment. Avoid rejection.',
     h1: 'Aadhaar Photo Size Requirements: Complete Specifications',
     category: 'identity',
-    keywords: 'aadhaar photo size, aadhaar photo specifications, aadhaar photo resolution',
+    keywords: 'aadhaar photo size, aadhar card size in pixels, aadhar size in pixels, aadhaar photo size in kb, aadhaar photo dimensions',
     datePublished: '2026-01-29',
     dateModified: '2026-01-29',
     intro: 'Correct photo specifications are essential for Aadhaar approval. This guide provides exact dimensions and technical requirements.',

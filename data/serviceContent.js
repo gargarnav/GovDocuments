@@ -2,11 +2,11 @@
 export const serviceContent = {
     'aadhaar-card': {
         title: 'Aadhaar Card Documents Required & Application Guide',
-        metaTitle: 'Aadhaar Card Documents Required – Complete Checklist | BharatApply',
+        metaTitle: 'Documents Required for Aadhaar Card: Full List (2026) | BharatApply',
         metaDescription: 'Find out exactly which documents you need to apply for or update your Aadhaar card. Includes ID proof, address proof, and date of birth documents with file format requirements.',
         dateModified: '2026-07-02',
         content: {
-            intro: 'The Aadhaar card is the single most important identity document for Indian citizens. Issued by the Unique Identification Authority of India (UIDAI), it serves as a universal proof of identity and address. Whether you are opening a bank account, applying for a passport, or accessing government subsidies, having an updated Aadhaar is mandatory. This guide covers everything you need to know about the documents required for a new Aadhaar card or for updating your existing one.',
+            intro: 'To apply for a new Aadhaar card you need three things: proof of identity, proof of address, and proof of date of birth. Aadhaar is issued by the Unique Identification Authority of India (UIDAI) and works as a universal proof of identity and address for bank accounts, passports, and government subsidies. This guide lists the exact accepted documents for a new Aadhaar as well as for updating the name, address, date of birth, or mobile number on an existing one.',
             sections: [
                 {
                     heading: 'What is Aadhaar Card?',
@@ -130,11 +130,11 @@ export const serviceContent = {
     },
     'pan-card': {
         title: 'PAN Card Documents Required & Application Guide',
-        metaTitle: 'PAN Card Documents Required – Complete Checklist | BharatApply',
+        metaTitle: 'Documents Required for PAN Card (2026): Full List | BharatApply',
         metaDescription: 'Applying for a PAN card? Check the complete list of documents required for Proof of Identity, Address, and DOB. Guide for Form 49A.',
         dateModified: '2026-07-02',
         content: {
-            intro: 'The Permanent Account Number (PAN) card is a vital document for any financial transaction in India. Issued by the Income Tax Department, it is mandatory for filing income tax returns, opening bank accounts, investing in stocks, and even buying high-value assets like cars or property. This guide details the exact documents you need for a frictionless PAN application process.',
+            intro: 'To apply for a new PAN card you need three things: proof of identity, proof of address, and proof of date of birth, along with a passport-size photo and signature in the correct format. The Permanent Account Number (PAN) is issued by the Income Tax Department and is mandatory for filing income tax returns, opening bank accounts, investing in stocks, and buying high-value assets. This guide lists the exact accepted documents for each requirement so your Form 49A application is not rejected.',
             sections: [
                 {
                     heading: 'What is a PAN Card?',
@@ -544,7 +544,7 @@ export const serviceContent = {
     },
     'birth-certificate': {
         title: 'Birth Certificate Documents Required & Application Guide',
-        metaTitle: 'Birth Certificate Documents Checklist – Apply Online/Offline | BharatApply',
+        metaTitle: 'Documents Required for Birth Certificate in India | BharatApply',
         metaDescription: 'How to apply for a Birth Certificate in India. List of documents for newborn registration and delayed registration.',
         dateModified: '2026-07-02',
         content: {
@@ -612,6 +612,16 @@ export const serviceContent = {
                   
                   **Processing Time:**
                   - 7 to 21 days.`
+                },
+                {
+                    heading: 'State-Specific Notes',
+                    body: `The core documents are the same across India, but the portal and a few rules vary by state:
+
+                  - **Delhi:** Apply on the MCD / NDMC portal. Hospital-born births are often pre-registered by the hospital; you mainly collect the certificate.
+                  - **Uttar Pradesh (UP):** Apply through the e-Nagar Sewa / e-Saathi portal. Delayed registration beyond 21 days usually needs an affidavit and magistrate or registrar approval.
+                  - **Maharashtra:** Apply via the Aaple Sarkar portal or the local Gram Panchayat / Municipal Corporation. Parents' Aadhaar and a marriage certificate are commonly requested.
+
+                  Always confirm the exact document list on your own state or city portal before applying, as local authorities can ask for additional proof.`
                 },
                 {
                     heading: 'Frequently Asked Questions',
