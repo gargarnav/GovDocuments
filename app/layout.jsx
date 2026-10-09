@@ -68,16 +68,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        {/* The UI renders in the system font stack (see --font-sans in
+            index.css), so we do not load a web font. This removes a
+            render-blocking request and two preconnects from the critical
+            path, which is the main FCP/LCP win on mobile. */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script
           type="application/ld+json"
@@ -100,11 +94,13 @@ gtag('config', '${GA_MEASUREMENT_ID}');`}
         </Script>
 
         {/* Google AdSense loader (verification + future ads). No ad units are
-            rendered until the account is approved. */}
+            rendered until the account is approved, so load it lazily (during
+            browser idle) to keep this heavy third-party script off the
+            critical path. Switch to afterInteractive once real ads are live. */}
         <Script
           id="adsense-loader"
           async
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           crossOrigin="anonymous"
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
         />
