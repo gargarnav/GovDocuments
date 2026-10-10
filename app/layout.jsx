@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { Header } from "@/components/Header";
@@ -12,9 +11,6 @@ import "@/styles/about.css";
 import "@/styles/GuidePage.css";
 import "@/styles/GuidesIndex.css";
 import "@/styles/site.css";
-
-const GA_MEASUREMENT_ID = "G-4S2264NZPY";
-const ADSENSE_CLIENT = "ca-pub-8431329527460254";
 
 export const metadata = {
   metadataBase: new URL("https://bharatapply.online"),
@@ -52,7 +48,6 @@ export const metadata = {
   },
   icons: { icon: "/favicon.svg", apple: "/favicon.svg" },
   robots: { index: true, follow: true },
-  other: { "google-adsense-account": ADSENSE_CLIENT },
 };
 
 export const viewport = {
@@ -81,30 +76,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        {/* Google Analytics 4 */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA_MEASUREMENT_ID}');`}
-        </Script>
-
-        {/* Google AdSense loader (verification + future ads). No ad units are
-            rendered until the account is approved, so load it lazily (during
-            browser idle) to keep this heavy third-party script off the
-            critical path. Switch to afterInteractive once real ads are live. */}
-        <Script
-          id="adsense-loader"
-          async
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-        />
-
+        {/* No Google Analytics or AdSense scripts. Site analytics come from
+            Vercel Analytics only; no ads are served. */}
         <ThemeProvider>
           <div className="app-container">
             <Header />
